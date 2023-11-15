@@ -1,0 +1,17 @@
+For installing mongodb, you can use home-brew and the following instructions:
+
+Install brew:
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew tap mongodb/brew
+brew update
+brew install mongodb-community@6.0
+
+Now we can use brew to run mongodb:
+brew services start mongodb-community@6.0
+
+To stop the mongod server:
+brew services stop mongodb-community@6.0
+
+
+
+
