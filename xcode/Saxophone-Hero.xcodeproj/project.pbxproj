@@ -7,23 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C07558552B04813F001414B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07558542B04813F001414B7 /* AppDelegate.swift */; };
-		C07558572B04813F001414B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07558562B04813F001414B7 /* SceneDelegate.swift */; };
-		C07558592B04813F001414B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07558582B04813F001414B7 /* ViewController.swift */; };
 		C075585C2B04813F001414B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585A2B04813F001414B7 /* Main.storyboard */; };
 		C075585E2B048141001414B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C075585D2B048141001414B7 /* Assets.xcassets */; };
 		C07558612B048141001414B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585F2B048141001414B7 /* LaunchScreen.storyboard */; };
+		C07559552B1156A6001414B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07559532B1156A6001414B7 /* SceneDelegate.swift */; };
+		C07559562B1156A6001414B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07559542B1156A6001414B7 /* AppDelegate.swift */; };
+		C07559592B11584E001414B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07559582B11584E001414B7 /* ViewController.swift */; };
+		C075595C2B11589A001414B7 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075595B2B11589A001414B7 /* AudioModel.swift */; };
+		C07559612B115A87001414B7 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559602B115A87001414B7 /* Novocaine.m */; };
+		C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559632B115ADB001414B7 /* CircularBuffer.m */; };
+		C07559672B115B10001414B7 /* AudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559662B115B10001414B7 /* AudioFileReader.m */; };
+		C075596A2B115B43001414B7 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559692B115B43001414B7 /* FFTHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C07558512B04813F001414B7 /* Saxophone-Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saxophone-Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C07558542B04813F001414B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C07558562B04813F001414B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C07558582B04813F001414B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C075585B2B04813F001414B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C075585D2B048141001414B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C07558602B048141001414B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C07558622B048141001414B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C07559532B1156A6001414B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C07559542B1156A6001414B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C07559582B11584E001414B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C075595B2B11589A001414B7 /* AudioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
+		C075595E2B115A87001414B7 /* Saxophone-Hero-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saxophone-Hero-Bridging-Header.h"; sourceTree = "<group>"; };
+		C075595F2B115A87001414B7 /* Novocaine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		C07559602B115A87001414B7 /* Novocaine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		C07559622B115ADB001414B7 /* CircularBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
+		C07559632B115ADB001414B7 /* CircularBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircularBuffer.m; sourceTree = "<group>"; };
+		C07559652B115B10001414B7 /* AudioFileReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
+		C07559662B115B10001414B7 /* AudioFileReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioFileReader.m; sourceTree = "<group>"; };
+		C07559682B115B43001414B7 /* FFTHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
+		C07559692B115B43001414B7 /* FFTHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +71,57 @@
 		C07558532B04813F001414B7 /* Saxophone-Hero */ = {
 			isa = PBXGroup;
 			children = (
-				C07558542B04813F001414B7 /* AppDelegate.swift */,
-				C07558562B04813F001414B7 /* SceneDelegate.swift */,
-				C07558582B04813F001414B7 /* ViewController.swift */,
-				C075585A2B04813F001414B7 /* Main.storyboard */,
+				C07559522B1155B9001414B7 /* AppDelegate */,
+				C075595A2B11586B001414B7 /* Models */,
+				C07559572B1157E6001414B7 /* ViewControllers */,
+				C075595D2B115A01001414B7 /* Utilities */,
 				C075585D2B048141001414B7 /* Assets.xcassets */,
+				C075585A2B04813F001414B7 /* Main.storyboard */,
 				C075585F2B048141001414B7 /* LaunchScreen.storyboard */,
 				C07558622B048141001414B7 /* Info.plist */,
 			);
 			path = "Saxophone-Hero";
+			sourceTree = "<group>";
+		};
+		C07559522B1155B9001414B7 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C07559542B1156A6001414B7 /* AppDelegate.swift */,
+				C07559532B1156A6001414B7 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C07559572B1157E6001414B7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C07559582B11584E001414B7 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C075595A2B11586B001414B7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C075595B2B11589A001414B7 /* AudioModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C075595D2B115A01001414B7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C075595F2B115A87001414B7 /* Novocaine.h */,
+				C07559602B115A87001414B7 /* Novocaine.m */,
+				C07559622B115ADB001414B7 /* CircularBuffer.h */,
+				C07559632B115ADB001414B7 /* CircularBuffer.m */,
+				C07559652B115B10001414B7 /* AudioFileReader.h */,
+				C07559662B115B10001414B7 /* AudioFileReader.m */,
+				C07559682B115B43001414B7 /* FFTHelper.h */,
+				C07559692B115B43001414B7 /* FFTHelper.m */,
+				C075595E2B115A87001414B7 /* Saxophone-Hero-Bridging-Header.h */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +156,7 @@
 				TargetAttributes = {
 					C07558502B04813F001414B7 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -138,9 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C07558592B04813F001414B7 /* ViewController.swift in Sources */,
-				C07558552B04813F001414B7 /* AppDelegate.swift in Sources */,
-				C07558572B04813F001414B7 /* SceneDelegate.swift in Sources */,
+				C07559672B115B10001414B7 /* AudioFileReader.m in Sources */,
+				C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */,
+				C07559592B11584E001414B7 /* ViewController.swift in Sources */,
+				C07559552B1156A6001414B7 /* SceneDelegate.swift in Sources */,
+				C075595C2B11589A001414B7 /* AudioModel.swift in Sources */,
+				C07559562B1156A6001414B7 /* AppDelegate.swift in Sources */,
+				C075596A2B115B43001414B7 /* FFTHelper.m in Sources */,
+				C07559612B115A87001414B7 /* Novocaine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HV2RN7RWU5;
@@ -308,6 +372,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SMUMSLC.Saxophone-Hero";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Saxophone-Hero/Utilities/Saxophone-Hero-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -318,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HV2RN7RWU5;
@@ -336,6 +403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SMUMSLC.Saxophone-Hero";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Saxophone-Hero/Utilities/Saxophone-Hero-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
