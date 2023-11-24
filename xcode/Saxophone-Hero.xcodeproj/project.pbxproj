@@ -18,6 +18,7 @@
 		C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559632B115ADB001414B7 /* CircularBuffer.m */; };
 		C07559672B115B10001414B7 /* AudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559662B115B10001414B7 /* AudioFileReader.m */; };
 		C075596A2B115B43001414B7 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559692B115B43001414B7 /* FFTHelper.m */; };
+		C075596D2B115FD3001414B7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075596C2B115FD3001414B7 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		C07559662B115B10001414B7 /* AudioFileReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioFileReader.m; sourceTree = "<group>"; };
 		C07559682B115B43001414B7 /* FFTHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		C07559692B115B43001414B7 /* FFTHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
+		C075596C2B115FD3001414B7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				C07559522B1155B9001414B7 /* AppDelegate */,
 				C075595A2B11586B001414B7 /* Models */,
 				C07559572B1157E6001414B7 /* ViewControllers */,
+				C075596B2B115F97001414B7 /* SKScene */,
 				C075595D2B115A01001414B7 /* Utilities */,
 				C075585D2B048141001414B7 /* Assets.xcassets */,
 				C075585A2B04813F001414B7 /* Main.storyboard */,
@@ -122,6 +125,14 @@
 				C075595E2B115A87001414B7 /* Saxophone-Hero-Bridging-Header.h */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C075596B2B115F97001414B7 /* SKScene */ = {
+			isa = PBXGroup;
+			children = (
+				C075596C2B115FD3001414B7 /* GameScene.swift */,
+			);
+			path = SKScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 				C07559672B115B10001414B7 /* AudioFileReader.m in Sources */,
 				C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */,
 				C07559592B11584E001414B7 /* ViewController.swift in Sources */,
+				C075596D2B115FD3001414B7 /* GameScene.swift in Sources */,
 				C07559552B1156A6001414B7 /* SceneDelegate.swift in Sources */,
 				C075595C2B11589A001414B7 /* AudioModel.swift in Sources */,
 				C07559562B1156A6001414B7 /* AppDelegate.swift in Sources */,
