@@ -1,11 +1,6 @@
-//
-//  ViewController.swift
-//  Saxophone-Hero
-//
-//  Created by Reece Iriye on 11/14/23.
-//
 
 import UIKit
+
 
 class ViewController: UIViewController {
 
