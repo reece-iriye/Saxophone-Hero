@@ -12,13 +12,13 @@
 		C07558612B048141001414B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585F2B048141001414B7 /* LaunchScreen.storyboard */; };
 		C07559552B1156A6001414B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07559532B1156A6001414B7 /* SceneDelegate.swift */; };
 		C07559562B1156A6001414B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07559542B1156A6001414B7 /* AppDelegate.swift */; };
-		C07559592B11584E001414B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07559582B11584E001414B7 /* ViewController.swift */; };
 		C075595C2B11589A001414B7 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075595B2B11589A001414B7 /* AudioModel.swift */; };
 		C07559612B115A87001414B7 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559602B115A87001414B7 /* Novocaine.m */; };
 		C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559632B115ADB001414B7 /* CircularBuffer.m */; };
 		C07559672B115B10001414B7 /* AudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559662B115B10001414B7 /* AudioFileReader.m */; };
 		C075596A2B115B43001414B7 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C07559692B115B43001414B7 /* FFTHelper.m */; };
-		C075596D2B115FD3001414B7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075596C2B115FD3001414B7 /* GameScene.swift */; };
+		C095126C2B1940AD00248A16 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C095126B2B1940AD00248A16 /* GameScene.swift */; };
+		C095126E2B19414500248A16 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C095126D2B19414500248A16 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,6 @@
 		C07558622B048141001414B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C07559532B1156A6001414B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C07559542B1156A6001414B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C07559582B11584E001414B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C075595B2B11589A001414B7 /* AudioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 		C075595E2B115A87001414B7 /* Saxophone-Hero-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saxophone-Hero-Bridging-Header.h"; sourceTree = "<group>"; };
 		C075595F2B115A87001414B7 /* Novocaine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
@@ -40,7 +39,8 @@
 		C07559662B115B10001414B7 /* AudioFileReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioFileReader.m; sourceTree = "<group>"; };
 		C07559682B115B43001414B7 /* FFTHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		C07559692B115B43001414B7 /* FFTHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
-		C075596C2B115FD3001414B7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		C095126B2B1940AD00248A16 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		C095126D2B19414500248A16 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 				C07559522B1155B9001414B7 /* AppDelegate */,
 				C075595A2B11586B001414B7 /* Models */,
 				C07559572B1157E6001414B7 /* ViewControllers */,
-				C075596B2B115F97001414B7 /* SKScene */,
+				C095126A2B19406800248A16 /* Scenes */,
 				C075595D2B115A01001414B7 /* Utilities */,
 				C075585D2B048141001414B7 /* Assets.xcassets */,
 				C075585A2B04813F001414B7 /* Main.storyboard */,
@@ -98,7 +98,7 @@
 		C07559572B1157E6001414B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C07559582B11584E001414B7 /* ViewController.swift */,
+				C095126D2B19414500248A16 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,12 +127,12 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		C075596B2B115F97001414B7 /* SKScene */ = {
+		C095126A2B19406800248A16 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C075596C2B115FD3001414B7 /* GameScene.swift */,
+				C095126B2B1940AD00248A16 /* GameScene.swift */,
 			);
-			path = SKScene;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,11 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C095126C2B1940AD00248A16 /* GameScene.swift in Sources */,
 				C07559672B115B10001414B7 /* AudioFileReader.m in Sources */,
 				C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */,
-				C07559592B11584E001414B7 /* ViewController.swift in Sources */,
-				C075596D2B115FD3001414B7 /* GameScene.swift in Sources */,
 				C07559552B1156A6001414B7 /* SceneDelegate.swift in Sources */,
+				C095126E2B19414500248A16 /* HomeViewController.swift in Sources */,
 				C075595C2B11589A001414B7 /* AudioModel.swift in Sources */,
 				C07559562B1156A6001414B7 /* AppDelegate.swift in Sources */,
 				C075596A2B115B43001414B7 /* FFTHelper.m in Sources */,
