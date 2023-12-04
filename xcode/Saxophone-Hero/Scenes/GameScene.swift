@@ -22,9 +22,10 @@ class GameScene: SKScene {
     
     var tempo: Int = 120 // Default tempo
     var notesArray: [CGFloat] = [] // Default empty notes array
+    var noteLengths: [Double] = []
 
     // Convenience initializer to pass tempo and notesArray
-    convenience init(size: CGSize, tempo: Int, notesArray: [Double]) {
+    convenience init(size: CGSize, tempo: Int, notesArray: [Double], noteLengths: [Double]) {
         self.init(size: size)
         // Get the size of the screen or the view
         let screenSize = UIScreen.main.bounds.size
@@ -34,6 +35,7 @@ class GameScene: SKScene {
         screenHeight = screenSize.height
         self.tempo = tempo
         self.notesArray = notesArray.map { CGFloat($0) }
+        self.noteLengths = noteLengths
         self.calculateVelocity()
     }
 
@@ -54,7 +56,7 @@ class GameScene: SKScene {
     func beginSpawns() {
         self.startSpawningMeasures()
 
-        let noteSpawnDelay = SKAction.wait(forDuration: (1/(Double(tempo/60))*4.35))
+        let noteSpawnDelay = SKAction.wait(forDuration: (1/(Double(tempo/60))*4))
 
         // Use SKAction.run to execute the startSpawningNotes method after the delay
         let startSpawningNotesAction = SKAction.run {
@@ -104,6 +106,7 @@ class GameScene: SKScene {
             let lineHeight = self.size.height * heightPercentage
             let line = SKSpriteNode(color: .black, size: CGSize(width: self.size.width, height: 5))
             line.position = CGPoint(x: self.size.width / 2, y: lineHeight)
+            line.zPosition = 5
             addChild(line)
         }
     }
@@ -127,6 +130,7 @@ class GameScene: SKScene {
     func setupPlayer() {
         player = SKSpriteNode(color: .blue, size: CGSize(width: screenHeight*0.05, height: screenHeight*0.05))
         player.position = CGPoint(x: screenWidth*0.16, y: size.height / 2)
+        player.zPosition = 10
         addChild(player)
     }
     
@@ -145,42 +149,42 @@ class GameScene: SKScene {
 
     // Function to start spawning blocks
     func startSpawningNotes() {
-        let noteSpawnAction = SKAction.run {
-            self.spawnNote()
+        var actions: [SKAction] = []
+        
+        for (note, length) in zip(notesArray.enumerated(), noteLengths.enumerated()) {
+            let beat = 1/(Double(tempo/60))
+            //let noteDuration = TimeInterval(1.0)
+            let noteDuration = TimeInterval(beat*(length.element))
+
+            let noteSpawnAction = SKAction.sequence([
+                SKAction.run {
+                    self.spawnNote(notePos:note.element, noteLen:length.element*0.25)
+                },
+                SKAction.wait(forDuration: noteDuration)
+            ])
+
+            actions.append(noteSpawnAction)
+
         }
+        
+        // Add the spawnFinish action to the sequence
+        actions.append(SKAction.wait(forDuration: 2))
+        
+        actions.append(SKAction.run {
+            self.spawnFinish()
+        })
 
-        let noteSpawnDelay = SKAction.wait(forDuration: 1 / (Double(tempo/60)))
-
-        // Use a custom action to check if new notes should be spawned
-        let checkSpawnCondition = SKAction.customAction(withDuration: 0) { _, _ in
-            if self.currentNote < self.notesArray.count {
-                // If the condition is met, spawn a new note
-                self.run(noteSpawnAction)
-            }
-            else {
-                // Stop the repeating sequence after the else block is hit
-                self.removeAction(forKey: "noteSpawnSequenceForever")
-                self.spawnFinish()
-            }
-        }
-
-        let noteSpawnSequence = SKAction.sequence([checkSpawnCondition, noteSpawnDelay])
-        let noteSpawnSequenceForever = SKAction.repeatForever(noteSpawnSequence)
-
-        // Assign a unique key to the repeating sequence action
-        run(noteSpawnSequenceForever, withKey: "noteSpawnSequenceForever")
+        // Run the entire sequence of actions
+        run(SKAction.sequence(actions))
     }
 
 
 
     // Function to spawn blocks
-    func spawnNote() {
+    func spawnNote(notePos:CGFloat, noteLen:Double) {
         // Create a block sprite
-        let note = SKSpriteNode(color: .red, size:CGSize(width: screenHeight*0.05, height: screenHeight*0.05))
-        print(currentNote)
-        print(notesArray[currentNote])
-        note.position = CGPoint(x: screenWidth, y: screenHeight*noteHeights[Int(notesArray[currentNote])])
-        self.currentNote += 1
+        let note = SKSpriteNode(color: .red, size:CGSize(width: screenWidth*0.4*noteLen*0.98, height: screenHeight*0.05))
+        note.position = CGPoint(x: screenWidth+(0.5*noteLen*0.4*screenWidth), y: screenHeight*noteHeights[Int(notePos)])
         // Set the initial position of the block based on the array of notes
         // You need to implement your own logic to determine the vertical position based on the notes array
         note.name = "note"
@@ -208,6 +212,8 @@ class GameScene: SKScene {
         let line = SKSpriteNode(color: .black, size: CGSize(width: 5, height: self.screenHeight*0.4))
         
         line.position = CGPoint(x: xCoordinate, y: size.height / 2)
+        
+        line.zPosition = 5
         
         // Add the block to the scene
         addChild(line)
