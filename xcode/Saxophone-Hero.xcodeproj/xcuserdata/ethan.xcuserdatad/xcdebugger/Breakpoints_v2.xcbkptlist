@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "21B7CCE7-63A6-4D6B-9F29-312569F42835"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DFD32D50-AB59-4CC1-B7C8-64CA194F0C13"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Saxophone-Hero/Scenes/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "GameScene"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F38C21C9-E056-4CCA-935B-FE355D5496C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Saxophone-Hero/Scenes/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "startSpawningNotes()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F38C21C9-E056-4CCA-935B-FE355D5496C8 - e3729fd471b02ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Saxophone_Hero.GameScene.startSpawningNotes() -&gt; ()"
+                  moduleName = "Saxophone-Hero"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethan/Documents/Saxophone-Hero/xcode/Saxophone-Hero/Scenes/GameScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "F38C21C9-E056-4CCA-935B-FE355D5496C8 - e3729fd471b02b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Saxophone_Hero.GameScene.startSpawningNotes() -&gt; ()"
+                  moduleName = "Saxophone-Hero"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethan/Documents/Saxophone-Hero/xcode/Saxophone-Hero/Scenes/GameScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "F38C21C9-E056-4CCA-935B-FE355D5496C8 - 24573dda953660de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Saxophone_Hero.GameScene.startSpawningNotes() -&gt; ()"
+                  moduleName = "Saxophone-Hero"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethan/Documents/Saxophone-Hero/xcode/Saxophone-Hero/Scenes/GameScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E47D9B0E-EC7E-444E-BB2C-9772085086E6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Saxophone-Hero/Scenes/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "spawnNote()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
