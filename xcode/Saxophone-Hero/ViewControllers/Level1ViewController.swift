@@ -14,7 +14,7 @@ class Level1ViewController: UIViewController {
         // Create and configure the scene
         let tempo = 180
         // Generate an array of 50 doubles from 0.0 to 11.0
-        let notesArray: [Double] = [13.0,13.0,13.0,13.0,13.0,0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0] // Replace with your actual notes
+        let notesArray: [Double] = [0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0] // Replace with your actual notes
         let scene = GameScene(size: skView.bounds.size, tempo: tempo, notesArray: notesArray)
 
         scene.scaleMode = .aspectFill

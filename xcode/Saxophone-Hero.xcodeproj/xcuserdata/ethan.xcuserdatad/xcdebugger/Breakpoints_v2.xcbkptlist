@@ -14,73 +14,10 @@
             filePath = "Saxophone-Hero/Scenes/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "GameScene"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F38C21C9-E056-4CCA-935B-FE355D5496C8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Saxophone-Hero/Scenes/GameScene.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "startSpawningNotes()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F38C21C9-E056-4CCA-935B-FE355D5496C8 - e3729fd471b02ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Saxophone_Hero.GameScene.startSpawningNotes() -&gt; ()"
-                  moduleName = "Saxophone-Hero"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethan/Documents/Saxophone-Hero/xcode/Saxophone-Hero/Scenes/GameScene.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
-                  offsetFromSymbolStart = "104">
-               </Location>
-               <Location
-                  uuid = "F38C21C9-E056-4CCA-935B-FE355D5496C8 - e3729fd471b02b5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Saxophone_Hero.GameScene.startSpawningNotes() -&gt; ()"
-                  moduleName = "Saxophone-Hero"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethan/Documents/Saxophone-Hero/xcode/Saxophone-Hero/Scenes/GameScene.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "104">
-               </Location>
-               <Location
-                  uuid = "F38C21C9-E056-4CCA-935B-FE355D5496C8 - 24573dda953660de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Saxophone_Hero.GameScene.startSpawningNotes() -&gt; ()"
-                  moduleName = "Saxophone-Hero"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethan/Documents/Saxophone-Hero/xcode/Saxophone-Hero/Scenes/GameScene.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -93,8 +30,8 @@
             filePath = "Saxophone-Hero/Scenes/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "spawnNote()"
             landmarkType = "7">
          </BreakpointContent>

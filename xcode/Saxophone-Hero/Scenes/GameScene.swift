@@ -8,6 +8,8 @@ class GameScene: SKScene {
     var noteHeights:[CGFloat] = [0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.15]
     var currentNote:Int = 0
     
+    var scoreLabel: SKLabelNode!
+    
     // Player sprite
     var player: SKSpriteNode!
 
@@ -40,9 +42,9 @@ class GameScene: SKScene {
         
         setupBackground()
         setupPlayer()
-        // You can now access tempo and notesArray in your scene
-        print("Tempo: \(tempo)")
-        print("Notes Array: \(notesArray)")
+        
+        // Create and add the score label
+        setupScoreLabel()
         
         beginSpawns()
         
@@ -63,6 +65,16 @@ class GameScene: SKScene {
 
         // Run the sequence
         run(noteSpawnSequence)
+    }
+    
+    // Function to set up the score label
+    func setupScoreLabel() {
+        scoreLabel = SKLabelNode(text: "Score: 0")
+        scoreLabel.fontName = "Helvetica"
+        scoreLabel.fontSize = 20
+        scoreLabel.position = CGPoint(x: size.width / 2, y: size.height*0.9)
+        scoreLabel.fontColor = .lightGray // or any contrasting color
+        addChild(scoreLabel)
     }
 
     
@@ -137,13 +149,29 @@ class GameScene: SKScene {
             self.spawnNote()
         }
 
-        let noteSpawnDelay = SKAction.wait(forDuration: 1/(Double(tempo/60))) // Adjust the duration as needed
+        let noteSpawnDelay = SKAction.wait(forDuration: 1 / (Double(tempo/60)))
 
-        let noteSpawnSequence = SKAction.sequence([noteSpawnAction, noteSpawnDelay])
-        let noteSpawnForever = SKAction.repeatForever(noteSpawnSequence)
+        // Use a custom action to check if new notes should be spawned
+        let checkSpawnCondition = SKAction.customAction(withDuration: 0) { _, _ in
+            if self.currentNote < self.notesArray.count {
+                // If the condition is met, spawn a new note
+                self.run(noteSpawnAction)
+            }
+            else {
+                // Stop the repeating sequence after the else block is hit
+                self.removeAction(forKey: "noteSpawnSequenceForever")
+                self.spawnFinish()
+            }
+        }
 
-        run(noteSpawnForever)
+        let noteSpawnSequence = SKAction.sequence([checkSpawnCondition, noteSpawnDelay])
+        let noteSpawnSequenceForever = SKAction.repeatForever(noteSpawnSequence)
+
+        // Assign a unique key to the repeating sequence action
+        run(noteSpawnSequenceForever, withKey: "noteSpawnSequenceForever")
     }
+
+
 
     // Function to spawn blocks
     func spawnNote() {
@@ -155,6 +183,7 @@ class GameScene: SKScene {
         self.currentNote += 1
         // Set the initial position of the block based on the array of notes
         // You need to implement your own logic to determine the vertical position based on the notes array
+        note.name = "note"
 
         // Add the block to the scene
         addChild(note)
@@ -196,18 +225,102 @@ class GameScene: SKScene {
         // Run the actions
         line.run(sequence)
     }
+    
+    func spawnFinish() {
+        // Create a block sprite
+        let finishLine = SKSpriteNode(color: .black, size: CGSize(width: 50, height: self.screenHeight))
+        
+        finishLine.position = CGPoint(x: screenWidth, y: size.height / 2)
+        
+        finishLine.name = "finish"
+        
+        // Add the block to the scene
+        addChild(finishLine)
+
+        // Set the block's velocity to move towards the left
+        let moveLeft = SKAction.moveBy(x: -velocity, y: 0, duration: 0.1) // Adjust the duration and velocity as needed
+        let moveLeftForever = SKAction.repeat(moveLeft, count: 100)
+        
+        let wait = SKAction.wait(forDuration: 1.0) // Adjust the delay as needed
+        let remove = SKAction.removeFromParent()
+
+        // Spawn, move, wait, and remove actions
+        let sequence = SKAction.sequence([moveLeftForever, wait, remove])
+
+        // Run the actions
+        finishLine.run(sequence)
+    }
 
 
     // Function to handle collisions
     override func update(_ currentTime: TimeInterval) {
-        enumerateChildNodes(withName: "block") { node, _ in
+        enumerateChildNodes(withName: "note") { node, _ in
             if self.player.intersects(node) {
-                // Collision detected, add to score and remove the block
+                // Collision with note detected, add to score and remove the note
                 self.score += 1
-                node.removeFromParent()
+                self.scoreLabel.text = "Score: \(self.score)"
+            }
+        }
+
+        enumerateChildNodes(withName: "finish") { node, _ in
+            if self.player.intersects(node) {
+                // Collision with finish detected, trigger endLevel function
+                self.endLevel()
             }
         }
     }
+    
+    func endLevel() {
+        // Remove all nodes from the scene
+        removeAllChildren()
+        
+        // Stop spawning actions for measures and finish line
+        self.removeAllActions()
+
+        // Create a label to display the score
+        let endLabel = SKLabelNode(fontNamed: "Helvetica")
+        endLabel.text = "Score: \(score)"
+        endLabel.fontSize = 50
+        endLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight*0.6)
+        endLabel.fontColor = .black
+        addChild(endLabel)
+
+        // Create a player node and position it underneath the score label
+        player = SKSpriteNode(color: .blue, size: CGSize(width: screenHeight * 0.1, height: screenHeight * 0.1))
+        player.position = CGPoint(x: size.width / 2, y: endLabel.position.y - endLabel.frame.size.height)
+        addChild(player)
+
+        // Create a button node
+        let backButton = SKLabelNode(fontNamed: "Helvetica")
+        backButton.text = "Back to Menu"
+        backButton.fontSize = 30
+        backButton.position = CGPoint(x: size.width / 2, y: player.position.y - player.frame.size.height - 20)
+        backButton.fontColor = .black
+        backButton.color = .blue
+        backButton.name = "backButton"  // Set a name for the button to identify it later
+        addChild(backButton)
+    }
+
+    // Add this function to your GameScene class
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            let touchedNode = atPoint(location)
+
+            if touchedNode.name == "backButton" {
+                // Handle the button tap (e.g., navigate back to the previous screen)
+
+                // Transition back to the initial view controller
+                if let view = self.view {
+                    let transition = SKTransition.fade(withDuration: 0.5)
+                    let initialViewController = self.view?.window?.rootViewController
+                    view.presentScene(nil)  // Remove the current scene
+                    initialViewController?.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
+
 
     // Handle user input (call this function when you receive input from the notes)
     func handleInput(yCoordinate: CGFloat) {
