@@ -41,7 +41,6 @@ class GameScene: SKScene {
 
     // Initial setup of the scene
     override func didMove(to view: SKView) {
-        
         setupBackground()
         setupPlayer()
         
@@ -73,9 +72,9 @@ class GameScene: SKScene {
     func setupScoreLabel() {
         scoreLabel = SKLabelNode(text: "Score: 0")
         scoreLabel.fontName = "Helvetica"
-        scoreLabel.fontSize = 20
+        scoreLabel.fontSize = 35
         scoreLabel.position = CGPoint(x: size.width / 2, y: size.height*0.9)
-        scoreLabel.fontColor = .lightGray // or any contrasting color
+        scoreLabel.fontColor = .white // or any contrasting color
         addChild(scoreLabel)
     }
 
@@ -90,7 +89,18 @@ class GameScene: SKScene {
     // Function to set up the background
     func setupBackground() {
         // Add your sheet music background or any other background setup code here
-        self.backgroundColor = .white
+        
+        // Load the background texture
+        let backgroundImage = SKSpriteNode(imageNamed: "background")
+        
+        // Set the position to the center of the scene
+        backgroundImage.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        
+        backgroundImage.alpha = 0.5
+
+        // Add the background to the scene
+        addChild(backgroundImage)
+        
         self.createHorizontalLines()
         self.createRestZone()
         self.spawnMeasure(xCoordinate: screenWidth*0.6)
@@ -107,6 +117,7 @@ class GameScene: SKScene {
             let line = SKSpriteNode(color: .black, size: CGSize(width: self.size.width, height: 5))
             line.position = CGPoint(x: self.size.width / 2, y: lineHeight)
             line.zPosition = 5
+            line.color = .white
             addChild(line)
         }
     }
@@ -209,7 +220,7 @@ class GameScene: SKScene {
     // Function to spawn blocks
     func spawnMeasure(xCoordinate: CGFloat) {
         // Create a block sprite
-        let line = SKSpriteNode(color: .black, size: CGSize(width: 5, height: self.screenHeight*0.4))
+        let line = SKSpriteNode(color: .white, size: CGSize(width: 5, height: self.screenHeight*0.4))
         
         line.position = CGPoint(x: xCoordinate, y: size.height / 2)
         
@@ -234,7 +245,7 @@ class GameScene: SKScene {
     
     func spawnFinish() {
         // Create a block sprite
-        let finishLine = SKSpriteNode(color: .black, size: CGSize(width: 50, height: self.screenHeight))
+        let finishLine = SKSpriteNode(color: .green, size: CGSize(width: 50, height: self.screenHeight))
         
         finishLine.position = CGPoint(x: screenWidth, y: size.height / 2)
         
@@ -288,7 +299,7 @@ class GameScene: SKScene {
         endLabel.text = "Score: \(score)"
         endLabel.fontSize = 50
         endLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight*0.6)
-        endLabel.fontColor = .black
+        endLabel.fontColor = .white
         addChild(endLabel)
 
         // Create a player node and position it underneath the score label
@@ -301,8 +312,8 @@ class GameScene: SKScene {
         backButton.text = "Back to Menu"
         backButton.fontSize = 30
         backButton.position = CGPoint(x: size.width / 2, y: player.position.y - player.frame.size.height - 20)
-        backButton.fontColor = .black
-        backButton.color = .blue
+        backButton.fontColor = .white
+        backButton.color = .black
         backButton.name = "backButton"  // Set a name for the button to identify it later
         addChild(backButton)
     }
