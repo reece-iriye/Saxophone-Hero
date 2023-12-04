@@ -96,7 +96,7 @@ class GameScene: SKScene {
         // Set the position to the center of the scene
         backgroundImage.position = CGPoint(x: size.width / 2, y: size.height / 2)
         
-        backgroundImage.alpha = 0.5
+        backgroundImage.alpha = 0.35
 
         // Add the background to the scene
         addChild(backgroundImage)
@@ -117,6 +117,7 @@ class GameScene: SKScene {
             let line = SKSpriteNode(color: .black, size: CGSize(width: self.size.width, height: 5))
             line.position = CGPoint(x: self.size.width / 2, y: lineHeight)
             line.zPosition = 5
+            line.alpha = 0.8
             line.color = .white
             addChild(line)
         }
@@ -225,6 +226,8 @@ class GameScene: SKScene {
         line.position = CGPoint(x: xCoordinate, y: size.height / 2)
         
         line.zPosition = 5
+        
+        line.alpha = 0.8
         
         // Add the block to the scene
         addChild(line)
@@ -341,8 +344,7 @@ class GameScene: SKScene {
 
     // Handle user input (call this function when you receive input from the notes)
     func handleInput(yCoordinate: CGFloat) {
-            let moveAction = SKAction.moveTo(y: 380-yCoordinate, duration: 0.1)
+            let moveAction = SKAction.moveTo(y: 380-yCoordinate, duration: 0.05)
             player.run(moveAction)
-            print(player.position)
     }
 }
