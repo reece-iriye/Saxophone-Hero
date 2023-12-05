@@ -23,6 +23,7 @@
 		C09512722B194B5900248A16 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09512712B194B5900248A16 /* SelectionViewController.swift */; };
 		C09512742B194B6C00248A16 /* Level1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09512732B194B6C00248A16 /* Level1ViewController.swift */; };
 		C09512762B194B7700248A16 /* Level2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09512752B194B7700248A16 /* Level2ViewController.swift */; };
+		C09512792B1FA8FC00248A16 /* MelSpectrogramCNN.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = C09512782B1FA8FC00248A16 /* MelSpectrogramCNN.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		C09512712B194B5900248A16 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		C09512732B194B6C00248A16 /* Level1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1ViewController.swift; sourceTree = "<group>"; };
 		C09512752B194B7700248A16 /* Level2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2ViewController.swift; sourceTree = "<group>"; };
+		C09512782B1FA8FC00248A16 /* MelSpectrogramCNN.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = MelSpectrogramCNN.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				C07559572B1157E6001414B7 /* ViewControllers */,
 				C095126A2B19406800248A16 /* Scenes */,
 				C075595D2B115A01001414B7 /* Utilities */,
+				C09512772B1EBEE300248A16 /* CoreML */,
 				C075585D2B048141001414B7 /* Assets.xcassets */,
 				C075585A2B04813F001414B7 /* Main.storyboard */,
 				C075585F2B048141001414B7 /* LaunchScreen.storyboard */,
@@ -145,6 +148,14 @@
 				C095126B2B1940AD00248A16 /* GameScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C09512772B1EBEE300248A16 /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				C09512782B1FA8FC00248A16 /* MelSpectrogramCNN.mlpackage */,
+			);
+			path = CoreML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				C09512702B194B3A00248A16 /* HistoryViewController.swift in Sources */,
 				C07559552B1156A6001414B7 /* SceneDelegate.swift in Sources */,
 				C09512722B194B5900248A16 /* SelectionViewController.swift in Sources */,
+				C09512792B1FA8FC00248A16 /* MelSpectrogramCNN.mlpackage in Sources */,
 				C09512762B194B7700248A16 /* Level2ViewController.swift in Sources */,
 				C095126E2B19414500248A16 /* HomeViewController.swift in Sources */,
 				C075595C2B11589A001414B7 /* AudioModel.swift in Sources */,
