@@ -10,13 +10,19 @@ import UIKit
 class ActiveNoteModel: NSObject {
     
     var note:Int = 13
+    var timeData:[Float] = []
+    
     
     
     func getCurrentNote() -> Int{
         return note
     }
     
-    func queryModel(data:[Double]) {
+    func updateData(timeData:[Float]) {
+        self.timeData = timeData
+    }
+    
+    func queryModel() {
         
     }
 }
