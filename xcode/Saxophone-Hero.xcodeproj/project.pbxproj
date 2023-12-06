@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D50F7A32B1FBFDE006279C2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */; };
 		C075585C2B04813F001414B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585A2B04813F001414B7 /* Main.storyboard */; };
 		C075585E2B048141001414B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C075585D2B048141001414B7 /* Assets.xcassets */; };
 		C07558612B048141001414B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585F2B048141001414B7 /* LaunchScreen.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C07558512B04813F001414B7 /* Saxophone-Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saxophone-Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C075585B2B04813F001414B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C075585D2B048141001414B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				C09512712B194B5900248A16 /* SelectionViewController.swift */,
 				C09512732B194B6C00248A16 /* Level1ViewController.swift */,
 				C09512752B194B7700248A16 /* Level2ViewController.swift */,
+				5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C095126C2B1940AD00248A16 /* GameScene.swift in Sources */,
+				5D50F7A32B1FBFDE006279C2 /* TableViewController.swift in Sources */,
 				C07559672B115B10001414B7 /* AudioFileReader.m in Sources */,
 				C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */,
 				C09512702B194B3A00248A16 /* HistoryViewController.swift in Sources */,
@@ -396,7 +400,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HV2RN7RWU5;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Saxophone-Hero/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -404,6 +408,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -427,7 +432,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HV2RN7RWU5;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Saxophone-Hero/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -435,6 +440,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
