@@ -11,6 +11,7 @@
 		AAF642042B1FB7E000D7E4A4 /* Ninja Lean Back.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642032B1FB7E000D7E4A4 /* Ninja Lean Back.png */; };
 		AAF642062B1FB7E600D7E4A4 /* Ninja Attack.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642052B1FB7E600D7E4A4 /* Ninja Attack.png */; };
 		AAF642082B1FB7EE00D7E4A4 /* Ninja Idle.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642072B1FB7EE00D7E4A4 /* Ninja Idle.png */; };
+		AAF6420B2B21170200D7E4A4 /* ActiveNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6420A2B21170200D7E4A4 /* ActiveNoteModel.swift */; };
 		C075585C2B04813F001414B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585A2B04813F001414B7 /* Main.storyboard */; };
 		C075585E2B048141001414B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C075585D2B048141001414B7 /* Assets.xcassets */; };
 		C07558612B048141001414B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585F2B048141001414B7 /* LaunchScreen.storyboard */; };
@@ -35,6 +36,7 @@
 		AAF642032B1FB7E000D7E4A4 /* Ninja Lean Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Lean Back.png"; sourceTree = "<group>"; };
 		AAF642052B1FB7E600D7E4A4 /* Ninja Attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Attack.png"; sourceTree = "<group>"; };
 		AAF642072B1FB7EE00D7E4A4 /* Ninja Idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Idle.png"; sourceTree = "<group>"; };
+		AAF6420A2B21170200D7E4A4 /* ActiveNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNoteModel.swift; sourceTree = "<group>"; };
 		C07558512B04813F001414B7 /* Saxophone-Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saxophone-Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C075585B2B04813F001414B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C075585D2B048141001414B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				C075595B2B11589A001414B7 /* AudioModel.swift */,
+				AAF6420A2B21170200D7E4A4 /* ActiveNoteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */,
 				C09512702B194B3A00248A16 /* HistoryViewController.swift in Sources */,
 				C07559552B1156A6001414B7 /* SceneDelegate.swift in Sources */,
+				AAF6420B2B21170200D7E4A4 /* ActiveNoteModel.swift in Sources */,
 				C09512722B194B5900248A16 /* SelectionViewController.swift in Sources */,
 				C09512792B1FA8FC00248A16 /* MelSpectrogramCNN.mlpackage in Sources */,
 				C09512762B194B7700248A16 /* Level2ViewController.swift in Sources */,
