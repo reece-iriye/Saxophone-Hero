@@ -22,6 +22,8 @@ class GameScene: SKScene {
     
     // setup audio model
     let audio = AudioModel(buffer_size: AudioConstants.AUDIO_BUFFER_SIZE)
+    
+    let activeNoteModel = ActiveNoteModel()
 
     // Score variable
     var score: Int = 0 {
@@ -73,6 +75,8 @@ class GameScene: SKScene {
         
         // start up the audio model here, querying microphone
         audio.startMicrophoneProcessing(withFps: 20) // preferred number of FFT calculations per second
+        
+        audio.play()
     }
     
     func beginSpawns() {
@@ -334,6 +338,8 @@ class GameScene: SKScene {
                 self.endLevel()
             }
         }
+        
+        self.activeNoteModel.updateData(timeData: audio.timeData)
     }
     
     func endLevel() {
