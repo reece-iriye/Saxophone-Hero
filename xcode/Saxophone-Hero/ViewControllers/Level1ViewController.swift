@@ -12,7 +12,7 @@ class Level1ViewController: UIViewController {
         skView.showsNodeCount = true
 
         // Create and configure the scene
-        let tempo = 60
+        let tempo = 180
         // Generate an array of 50 doubles from 0.0 to 11.0
         let hardNotesArray: [Double] = [7.0, 8.0, 2.0, 6.0, 11.0, 13.0, 1.0, 9.0, 8.0, 5.0,
                                     10.0, 12.0, 9.0, 5.0, 6.0, 9.0, 3.0, 12.0, 2.0, 5.0,

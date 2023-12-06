@@ -5,7 +5,7 @@ class GameScene: SKScene {
     var screenWidth:CGFloat!
     var screenHeight:CGFloat!
     var velocity:CGFloat!
-    var noteHeights:[CGFloat] = [0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.15]
+    var noteHeights:[CGFloat] = [0.9,0.85,0.8,0.75,0.7,0.65,0.6,0.55,0.5,0.45,0.4,0.35,0.3,0.15]
     var currentNote:Int = 0
     var attacking:Bool = false
     
@@ -14,8 +14,11 @@ class GameScene: SKScene {
     
     var scoreLabel: SKLabelNode!
     
+    var totalScore: Int = 0
+    
     // Player sprite
     var player: SKNode!
+    var scoreCalculator: SKSpriteNode!
     
     struct AudioConstants{
         static let AUDIO_BUFFER_SIZE = 4410
@@ -79,6 +82,7 @@ class GameScene: SKScene {
         
         setupBackground()
         setupPlayer()
+        setupScoreCalculator()
         
         // Create and add the score label
         setupScoreLabel()
@@ -197,15 +201,22 @@ class GameScene: SKScene {
         collisionNode.position = CGPoint(x: 15, y: 3)
         player.addChild(collisionNode)
 
-        // Create a stroked shape node as an outline
+        /* Create a stroked shape node as an outline
         let outlineNode = SKShapeNode(rectOf: collisionNode.size, cornerRadius: 5.0)
         outlineNode.strokeColor = SKColor.red  // Set the color of the outline
         outlineNode.lineWidth = 2.0  // Set the width of the outline
         outlineNode.position = CGPoint(x: -collisionNode.size.width / 2, y: -collisionNode.size.height / 2)
         collisionNode.addChild(outlineNode)
+        */
         
         player.name = "player"
         addChild(player)
+    }
+    
+    func setupScoreCalculator() {
+        self.scoreCalculator = SKSpriteNode(color: .white, size: CGSize(width: 1, height: screenHeight))
+        self.scoreCalculator.position = CGPoint(x: screenWidth/2, y: screenHeight/2)
+        self.scoreCalculator.alpha = 0
     }
 
     
@@ -343,7 +354,6 @@ class GameScene: SKScene {
                 self.score += 1
                 self.scoreLabel.text = "Score: \(self.score)"
                 if(!self.attacking) {
-                    print("attacking")
                     self.player.childNode(withName: "visualNode")?.removeAction(forKey: "runAnimation")
                     self.player.childNode(withName: "visualNode")?.run(self.repeatAttackAnimation, withKey: "attackAnimation")
                     self.attacking = true
@@ -351,9 +361,11 @@ class GameScene: SKScene {
                 
                 isColliding = true
             }
+            if (self.scoreCalculator.intersects(node)) {
+                self.totalScore += 1
+            }
         }
         if(attacking && !isColliding) {
-            print("running")
             self.player.childNode(withName: "visualNode")?.removeAction(forKey: "attackAnimation")
             self.player.childNode(withName: "visualNode")?.run(self.repeatRunAnimation, withKey: "runAnimation")
             self.attacking = false
@@ -372,24 +384,35 @@ class GameScene: SKScene {
     func endLevel() {
         // Remove all nodes from the scene
         removeAllChildren()
-        
+
         // Stop spawning actions for measures and finish line
         self.removeAllActions()
+
+        // Calculate accuracy percentage
+        let accuracy = (score * 100) / totalScore
 
         // Create a label to display the score
         let endLabel = SKLabelNode(fontNamed: "Helvetica")
         endLabel.text = "Score: \(score)"
         endLabel.fontSize = 50
-        endLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight*0.6)
+        endLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight*0.7)
         endLabel.fontColor = .white
         addChild(endLabel)
 
-        // Create a player node and position it underneath the score label
+        // Create a label to display accuracy percentage
+        let accuracyLabel = SKLabelNode(fontNamed: "Helvetica")
+        accuracyLabel.text = String(format: "Accuracy: %.2f%%", Double(score) / Double(totalScore) * 100)
+        accuracyLabel.fontSize = 30
+        accuracyLabel.position = CGPoint(x: screenWidth / 2, y: endLabel.position.y - (endLabel.frame.size.height + 20))
+        accuracyLabel.fontColor = .white
+        addChild(accuracyLabel)
+
+        // Create a player node and position it underneath the accuracy label
         player = SKNode()
-        let visual = SKSpriteNode(imageNamed: "Ninja Idle.png")
+        let visual = SKSpriteNode(imageNamed: "walk_1.png")
         visual.size = CGSize(width: screenHeight*0.2, height: screenHeight*0.2)
         player.addChild(visual)
-        player.position = CGPoint(x: size.width / 2, y: endLabel.position.y - (endLabel.frame.size.height+20))
+        player.position = CGPoint(x: size.width / 2, y: accuracyLabel.position.y - (accuracyLabel.frame.size.height + 20))
         addChild(player)
 
         // Create a button node
@@ -398,12 +421,13 @@ class GameScene: SKScene {
         backButton.fontSize = 30
         // Adjust the yOffset based on the visual node's height
         let yOffset: CGFloat = -visual.size.height / 2 - 20
-        backButton.position = CGPoint(x: size.width / 2, y: player.position.y + yOffset-20)
+        backButton.position = CGPoint(x: size.width / 2, y: player.position.y + yOffset - 20)
         backButton.fontColor = .white
         backButton.color = .black
         backButton.name = "backButton"  // Set a name for the button to identify it later
         addChild(backButton)
     }
+
 
     // Add this function to your GameScene class
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
