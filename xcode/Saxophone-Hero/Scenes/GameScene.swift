@@ -7,8 +7,9 @@ class GameScene: SKScene {
     var velocity:CGFloat!
     var noteHeights:[CGFloat] = [0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.15]
     var currentNote:Int = 0
+    var attacking:Bool = false
     
-    var attackAnimation:SKAction!
+    var repeatAttackAnimation:SKAction!
     var repeatRunAnimation:SKAction!
     
     var scoreLabel: SKLabelNode!
@@ -61,9 +62,20 @@ class GameScene: SKScene {
             textures.append(texture)
         }
         
-        let runAnimation = SKAction.animate(withNormalTextures: [textures[0],textures[3]], timePerFrame: 0.07)
-        attackAnimation = SKAction.animate(withNormalTextures: [textures[1],textures[2],textures[1],textures[2]], timePerFrame: 0.05)
+        let runAnimation = SKAction.sequence([
+        SKAction.animate(with: [textures[1]], timePerFrame: 0.15),
+        SKAction.animate(with: [textures[3]], timePerFrame: 0.15)
+        ])
+        let attackAnimation = SKAction.sequence([
+        SKAction.animate(with: [textures[0]],timePerFrame: 0.05),
+        SKAction.animate(with: [textures[2]],timePerFrame: 0.05),
+        SKAction.animate(with: [textures[0]],timePerFrame: 0.05),
+        SKAction.animate(with: [textures[2]],timePerFrame: 0.05),
+        ])
+        
+        SKAction.animate(withNormalTextures: [textures[1],textures[2],textures[1],textures[2]], timePerFrame: 0.05)
         repeatRunAnimation = SKAction.repeatForever(runAnimation)
+        repeatAttackAnimation = SKAction.repeatForever(attackAnimation)
         
         setupBackground()
         setupPlayer()
@@ -324,12 +336,27 @@ class GameScene: SKScene {
 
     // Function to handle collisions
     override func update(_ currentTime: TimeInterval) {
+        var isColliding = false
         enumerateChildNodes(withName: "note") { node, _ in
             if (self.player.childNode(withName: "collisionNode")?.intersects(node) != false) {
                 // Collision with note detected, add to score and remove the note
                 self.score += 1
                 self.scoreLabel.text = "Score: \(self.score)"
+                if(!self.attacking) {
+                    print("attacking")
+                    self.player.childNode(withName: "visualNode")?.removeAction(forKey: "runAnimation")
+                    self.player.childNode(withName: "visualNode")?.run(self.repeatAttackAnimation, withKey: "attackAnimation")
+                    self.attacking = true
+                }
+                
+                isColliding = true
             }
+        }
+        if(attacking && !isColliding) {
+            print("running")
+            self.player.childNode(withName: "visualNode")?.removeAction(forKey: "attackAnimation")
+            self.player.childNode(withName: "visualNode")?.run(self.repeatRunAnimation, withKey: "runAnimation")
+            self.attacking = false
         }
 
         enumerateChildNodes(withName: "finish") { node, _ in
