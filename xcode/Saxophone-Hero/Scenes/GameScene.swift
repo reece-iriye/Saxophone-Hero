@@ -15,6 +15,13 @@ class GameScene: SKScene {
     
     // Player sprite
     var player: SKNode!
+    
+    struct AudioConstants{
+        static let AUDIO_BUFFER_SIZE = 4410
+    }
+    
+    // setup audio model
+    let audio = AudioModel(buffer_size: AudioConstants.AUDIO_BUFFER_SIZE)
 
     // Score variable
     var score: Int = 0 {
@@ -34,8 +41,8 @@ class GameScene: SKScene {
         let screenSize = UIScreen.main.bounds.size
 
         // Now you have the width and height of the screen or view
-        screenWidth = screenSize.width
-        screenHeight = screenSize.height
+        self.screenWidth = screenSize.width
+        self.screenHeight = screenSize.height
         self.tempo = tempo
         self.notesArray = notesArray.map { CGFloat($0) }
         self.noteLengths = noteLengths
@@ -64,7 +71,8 @@ class GameScene: SKScene {
         
         beginSpawns()
         
-        
+        // start up the audio model here, querying microphone
+        audio.startMicrophoneProcessing(withFps: 20) // preferred number of FFT calculations per second
     }
     
     func beginSpawns() {
