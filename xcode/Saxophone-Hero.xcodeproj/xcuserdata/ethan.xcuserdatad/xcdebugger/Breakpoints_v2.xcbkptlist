@@ -14,10 +14,58 @@
             filePath = "Saxophone-Hero/Scenes/GameScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "GameScene"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2CE162D-CD36-4830-929C-DF83191515B7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Saxophone-Hero/Scenes/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "didMove(to:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2CE162D-CD36-4830-929C-DF83191515B7 - 3ae983301ede7bcb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Saxophone_Hero.GameScene.didMove(to: __C.SKView) -&gt; ()"
+                  moduleName = "Saxophone-Hero"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethan/Documents/Saxophone-Hero/xcode/Saxophone-Hero/Scenes/GameScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "F2CE162D-CD36-4830-929C-DF83191515B7 - 3ae983301ede7a2c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Saxophone_Hero.GameScene.didMove(to: __C.SKView) -&gt; ()"
+                  moduleName = "Saxophone-Hero"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethan/Documents/Saxophone-Hero/xcode/Saxophone-Hero/Scenes/GameScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "224">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AAF642022B1FB7D000D7E4A4 /* Ninja Walk.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642012B1FB7D000D7E4A4 /* Ninja Walk.png */; };
+		AAF642042B1FB7E000D7E4A4 /* Ninja Lean Back.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642032B1FB7E000D7E4A4 /* Ninja Lean Back.png */; };
+		AAF642062B1FB7E600D7E4A4 /* Ninja Attack.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642052B1FB7E600D7E4A4 /* Ninja Attack.png */; };
+		AAF642082B1FB7EE00D7E4A4 /* Ninja Idle.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642072B1FB7EE00D7E4A4 /* Ninja Idle.png */; };
 		C075585C2B04813F001414B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585A2B04813F001414B7 /* Main.storyboard */; };
 		C075585E2B048141001414B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C075585D2B048141001414B7 /* Assets.xcassets */; };
 		C07558612B048141001414B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585F2B048141001414B7 /* LaunchScreen.storyboard */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AAF642012B1FB7D000D7E4A4 /* Ninja Walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Walk.png"; sourceTree = "<group>"; };
+		AAF642032B1FB7E000D7E4A4 /* Ninja Lean Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Lean Back.png"; sourceTree = "<group>"; };
+		AAF642052B1FB7E600D7E4A4 /* Ninja Attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Attack.png"; sourceTree = "<group>"; };
+		AAF642072B1FB7EE00D7E4A4 /* Ninja Idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Idle.png"; sourceTree = "<group>"; };
 		C07558512B04813F001414B7 /* Saxophone-Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saxophone-Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C075585B2B04813F001414B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C075585D2B048141001414B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +70,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAF642092B1FB8B400D7E4A4 /* Animations.atlas */ = {
+			isa = PBXGroup;
+			children = (
+				AAF642072B1FB7EE00D7E4A4 /* Ninja Idle.png */,
+				AAF642052B1FB7E600D7E4A4 /* Ninja Attack.png */,
+				AAF642032B1FB7E000D7E4A4 /* Ninja Lean Back.png */,
+				AAF642012B1FB7D000D7E4A4 /* Ninja Walk.png */,
+			);
+			path = Animations.atlas;
+			sourceTree = "<group>";
+		};
 		C07558482B04813F001414B7 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +100,7 @@
 		C07558532B04813F001414B7 /* Saxophone-Hero */ = {
 			isa = PBXGroup;
 			children = (
+				AAF642092B1FB8B400D7E4A4 /* Animations.atlas */,
 				C07559522B1155B9001414B7 /* AppDelegate */,
 				C075595A2B11586B001414B7 /* Models */,
 				C07559572B1157E6001414B7 /* ViewControllers */,
@@ -206,9 +226,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF642022B1FB7D000D7E4A4 /* Ninja Walk.png in Resources */,
 				C07558612B048141001414B7 /* LaunchScreen.storyboard in Resources */,
 				C075585E2B048141001414B7 /* Assets.xcassets in Resources */,
+				AAF642082B1FB7EE00D7E4A4 /* Ninja Idle.png in Resources */,
+				AAF642062B1FB7E600D7E4A4 /* Ninja Attack.png in Resources */,
 				C075585C2B04813F001414B7 /* Main.storyboard in Resources */,
+				AAF642042B1FB7E000D7E4A4 /* Ninja Lean Back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

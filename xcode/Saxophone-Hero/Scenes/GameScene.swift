@@ -8,10 +8,13 @@ class GameScene: SKScene {
     var noteHeights:[CGFloat] = [0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.15]
     var currentNote:Int = 0
     
+    var attackAnimation:SKAction!
+    var repeatRunAnimation:SKAction!
+    
     var scoreLabel: SKLabelNode!
     
     // Player sprite
-    var player: SKSpriteNode!
+    var player: SKNode!
 
     // Score variable
     var score: Int = 0 {
@@ -41,6 +44,18 @@ class GameScene: SKScene {
 
     // Initial setup of the scene
     override func didMove(to view: SKView) {
+        var textures:[SKTexture] = []
+        let atlas = SKTextureAtlas(named: "Sprites")
+        for i in 1...atlas.textureNames.count {
+            let textureName = "walk_\(i)"
+            let texture = atlas.textureNamed(textureName)
+            textures.append(texture)
+        }
+        
+        let runAnimation = SKAction.animate(withNormalTextures: [textures[0],textures[3]], timePerFrame: 0.07)
+        attackAnimation = SKAction.animate(withNormalTextures: [textures[1],textures[2],textures[1],textures[2]], timePerFrame: 0.05)
+        repeatRunAnimation = SKAction.repeatForever(runAnimation)
+        
         setupBackground()
         setupPlayer()
         
@@ -49,7 +64,7 @@ class GameScene: SKScene {
         
         beginSpawns()
         
-            
+        
     }
     
     func beginSpawns() {
@@ -140,11 +155,35 @@ class GameScene: SKScene {
 
     // Function to set up the player sprite
     func setupPlayer() {
-        player = SKSpriteNode(color: .blue, size: CGSize(width: screenHeight*0.05, height: screenHeight*0.05))
+        player = SKNode()
+
+        // Visual Node
+        let visualNode = SKSpriteNode(imageNamed: "Ninja Idle.png")
+        visualNode.size = CGSize(width: screenHeight*0.13, height: screenHeight*0.13)
+        visualNode.name = "visualNode"
+        visualNode.run(repeatRunAnimation, withKey: "runAnimation")
         player.position = CGPoint(x: screenWidth*0.16, y: size.height / 2)
         player.zPosition = 10
+        player.addChild(visualNode)
+
+        // Collision Node
+        let collisionNode = SKSpriteNode()
+        collisionNode.size = CGSize(width: screenHeight*0.04, height: screenHeight*0.04)
+        collisionNode.name = "collisionNode"
+        collisionNode.position = CGPoint(x: 15, y: 3)
+        player.addChild(collisionNode)
+
+        // Create a stroked shape node as an outline
+        let outlineNode = SKShapeNode(rectOf: collisionNode.size, cornerRadius: 5.0)
+        outlineNode.strokeColor = SKColor.red  // Set the color of the outline
+        outlineNode.lineWidth = 2.0  // Set the width of the outline
+        outlineNode.position = CGPoint(x: -collisionNode.size.width / 2, y: -collisionNode.size.height / 2)
+        collisionNode.addChild(outlineNode)
+        
+        player.name = "player"
         addChild(player)
     }
+
     
     func startSpawningMeasures() {
         let measureSpawnAction = SKAction.run {
@@ -206,13 +245,12 @@ class GameScene: SKScene {
 
         // Set the block's velocity to move towards the left
         let moveLeft = SKAction.moveBy(x: -velocity, y: 0, duration: 0.1) // Adjust the duration and velocity as needed
-        let moveLeftForever = SKAction.repeat(moveLeft, count: 100)
+        let moveLeftForever = SKAction.repeat(moveLeft, count: 120)
         
-        let wait = SKAction.wait(forDuration: 1.0) // Adjust the delay as needed
         let remove = SKAction.removeFromParent()
 
         // Spawn, move, wait, and remove actions
-        let sequence = SKAction.sequence([moveLeftForever, wait, remove])
+        let sequence = SKAction.sequence([moveLeftForever, remove])
 
         // Run the actions
         note.run(sequence)
@@ -275,7 +313,7 @@ class GameScene: SKScene {
     // Function to handle collisions
     override func update(_ currentTime: TimeInterval) {
         enumerateChildNodes(withName: "note") { node, _ in
-            if self.player.intersects(node) {
+            if (self.player.childNode(withName: "collisionNode")?.intersects(node) != false) {
                 // Collision with note detected, add to score and remove the note
                 self.score += 1
                 self.scoreLabel.text = "Score: \(self.score)"
@@ -283,7 +321,7 @@ class GameScene: SKScene {
         }
 
         enumerateChildNodes(withName: "finish") { node, _ in
-            if self.player.intersects(node) {
+            if (self.player.childNode(withName: "collisionNode")?.intersects(node) != false) {
                 // Collision with finish detected, trigger endLevel function
                 self.endLevel()
             }
@@ -306,15 +344,20 @@ class GameScene: SKScene {
         addChild(endLabel)
 
         // Create a player node and position it underneath the score label
-        player = SKSpriteNode(color: .blue, size: CGSize(width: screenHeight * 0.1, height: screenHeight * 0.1))
-        player.position = CGPoint(x: size.width / 2, y: endLabel.position.y - endLabel.frame.size.height)
+        player = SKNode()
+        let visual = SKSpriteNode(imageNamed: "Ninja Idle.png")
+        visual.size = CGSize(width: screenHeight*0.2, height: screenHeight*0.2)
+        player.addChild(visual)
+        player.position = CGPoint(x: size.width / 2, y: endLabel.position.y - (endLabel.frame.size.height+20))
         addChild(player)
 
         // Create a button node
         let backButton = SKLabelNode(fontNamed: "Helvetica")
         backButton.text = "Back to Menu"
         backButton.fontSize = 30
-        backButton.position = CGPoint(x: size.width / 2, y: player.position.y - player.frame.size.height - 20)
+        // Adjust the yOffset based on the visual node's height
+        let yOffset: CGFloat = -visual.size.height / 2 - 20
+        backButton.position = CGPoint(x: size.width / 2, y: player.position.y + yOffset-20)
         backButton.fontColor = .white
         backButton.color = .black
         backButton.name = "backButton"  // Set a name for the button to identify it later
