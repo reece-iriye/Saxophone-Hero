@@ -16,6 +16,18 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rn8-iG-tqu">
+                                <rect key="frame" x="331" y="156" width="191" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="gameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zGL-2o-DrN"/>
+                                    <segue destination="wuR-SG-CN3" kind="show" id="Jsc-Xk-6Fz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -109,6 +121,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bns-hm-Mbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1299" y="-77"/>
+                    <connections>
+                        <outlet property="gameButton" destination="Rn8-iG-tqu" id="XMA-70-tZT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.69014084507043" y="-34.351145038167935"/>
+        </scene>
+        <!--Level1 View Controller-->
+        <scene sceneID="p47-XG-3pI">
+            <objects>
+                <viewController id="wuR-SG-CN3" customClass="Level1ViewController" customModule="Saxophone_Hero" customModuleProvider="target" sceneMemberID="viewController">
+                    <skView key="view" contentMode="scaleToFill" id="SCW-nb-Bes">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </skView>
+                    <navigationItem key="navigationItem" id="ztB-Rr-J0g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-5b-Iax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="-34"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="systemMintColor"/>

@@ -10,6 +10,11 @@ class HomeViewController: UIViewController {
         self.setUpBackgroundImage()
     }
 
+    @IBAction func gameButton(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var gameButton: UIButton!
+    
     // This function sets up the background image view
     func setUpBackgroundImage() {
         let backgroundImageView = UIImageView(frame: UIScreen.main.bounds)
