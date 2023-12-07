@@ -5,9 +5,10 @@ class GameScene: SKScene {
     var screenWidth:CGFloat!
     var screenHeight:CGFloat!
     var velocity:CGFloat!
-    var noteHeights:[CGFloat] = [0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.15]
+    var noteHeights:[CGFloat] = [0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45, 0.4, 0.35, 0.15, 0.15]
+//    [0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.15]
     var currentNote:Int = 0
-    var attacking:Bool = false
+    var attacking:Bool = false  // No initial attack state for the character
     
     var repeatAttackAnimation:SKAction!
     var repeatRunAnimation:SKAction!
@@ -21,9 +22,10 @@ class GameScene: SKScene {
         static let AUDIO_BUFFER_SIZE = 4410
     }
     
-    // setup audio model
+    // Set up model for reading in audio
     let audio = AudioModel(buffer_size: AudioConstants.AUDIO_BUFFER_SIZE)
     
+    // Set up model for interpreting audio
     let activeNoteModel = ActiveNoteModel()
 
     // Score variable
@@ -63,32 +65,32 @@ class GameScene: SKScene {
         }
         
         let runAnimation = SKAction.sequence([
-        SKAction.animate(with: [textures[1]], timePerFrame: 0.15),
-        SKAction.animate(with: [textures[3]], timePerFrame: 0.15)
+            SKAction.animate(with: [textures[1]], timePerFrame: 0.15),
+            SKAction.animate(with: [textures[3]], timePerFrame: 0.15)
         ])
         let attackAnimation = SKAction.sequence([
-        SKAction.animate(with: [textures[0]],timePerFrame: 0.05),
-        SKAction.animate(with: [textures[2]],timePerFrame: 0.05),
-        SKAction.animate(with: [textures[0]],timePerFrame: 0.05),
-        SKAction.animate(with: [textures[2]],timePerFrame: 0.05),
+            SKAction.animate(with: [textures[0]],timePerFrame: 0.05),
+            SKAction.animate(with: [textures[2]],timePerFrame: 0.05),
+            SKAction.animate(with: [textures[0]],timePerFrame: 0.05),
+            SKAction.animate(with: [textures[2]],timePerFrame: 0.05),
         ])
         
         SKAction.animate(withNormalTextures: [textures[1],textures[2],textures[1],textures[2]], timePerFrame: 0.05)
-        repeatRunAnimation = SKAction.repeatForever(runAnimation)
-        repeatAttackAnimation = SKAction.repeatForever(attackAnimation)
+        self.repeatRunAnimation = SKAction.repeatForever(runAnimation)
+        self.repeatAttackAnimation = SKAction.repeatForever(attackAnimation)
         
-        setupBackground()
-        setupPlayer()
+        self.setupBackground()
+        self.setupPlayer()
         
         // Create and add the score label
-        setupScoreLabel()
+        self.setupScoreLabel()
         
-        beginSpawns()
+        self.beginSpawns()
         
         // start up the audio model here, querying microphone
-        audio.startMicrophoneProcessing(withFps: 20) // preferred number of FFT calculations per second
+        self.audio.startMicrophoneProcessing(withFps: 20) // preferred number of FFT calculations per second, we don't use vDSP FFT though as a note
         
-        audio.play()
+        self.audio.play()
     }
     
     func beginSpawns() {
@@ -109,20 +111,22 @@ class GameScene: SKScene {
     
     // Function to set up the score label
     func setupScoreLabel() {
-        scoreLabel = SKLabelNode(text: "Score: 0")
-        scoreLabel.fontName = "Helvetica"
-        scoreLabel.fontSize = 35
-        scoreLabel.position = CGPoint(x: size.width / 2, y: size.height*0.9)
-        scoreLabel.fontColor = .white // or any contrasting color
-        addChild(scoreLabel)
+        self.scoreLabel = SKLabelNode(text: "Score: 0")
+        DispatchQueue.main.async {
+            self.scoreLabel.fontName = "Helvetica"
+            self.scoreLabel.fontSize = 35
+            self.scoreLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height*0.9)
+            self.scoreLabel.fontColor = .white // or any contrasting color
+        }
+        addChild(self.scoreLabel)
     }
 
     
     func calculateVelocity() {
-        let measuresPerMinute = tempo/4
+        let measuresPerMinute = self.tempo/4
         let screenPerMeasure = 0.4*screenWidth
         let pixelsPerMinute = screenPerMeasure*CGFloat(measuresPerMinute)
-        velocity = pixelsPerMinute/600
+        self.velocity = pixelsPerMinute/600
     }
 
     // Function to set up the background
@@ -179,23 +183,23 @@ class GameScene: SKScene {
 
     // Function to set up the player sprite
     func setupPlayer() {
-        player = SKNode()
+        self.player = SKNode()
 
         // Visual Node
         let visualNode = SKSpriteNode(imageNamed: "Ninja Idle.png")
-        visualNode.size = CGSize(width: screenHeight*0.13, height: screenHeight*0.13)
+        visualNode.size = CGSize(width: self.screenHeight*0.13, height: self.screenHeight*0.13)
         visualNode.name = "visualNode"
-        visualNode.run(repeatRunAnimation, withKey: "runAnimation")
-        player.position = CGPoint(x: screenWidth*0.16, y: size.height / 2)
-        player.zPosition = 10
-        player.addChild(visualNode)
+        visualNode.run(self.repeatRunAnimation, withKey: "runAnimation")
+        self.player.position = CGPoint(x: self.screenWidth*0.16, y: size.height / 2)
+        self.player.zPosition = 10
+        self.player.addChild(visualNode)
 
         // Collision Node
         let collisionNode = SKSpriteNode()
-        collisionNode.size = CGSize(width: screenHeight*0.04, height: screenHeight*0.04)
+        collisionNode.size = CGSize(width: self.screenHeight*0.04, height: self.screenHeight*0.04)
         collisionNode.name = "collisionNode"
         collisionNode.position = CGPoint(x: 15, y: 3)
-        player.addChild(collisionNode)
+        self.player.addChild(collisionNode)
 
         // Create a stroked shape node as an outline
         let outlineNode = SKShapeNode(rectOf: collisionNode.size, cornerRadius: 5.0)
@@ -204,8 +208,8 @@ class GameScene: SKScene {
         outlineNode.position = CGPoint(x: -collisionNode.size.width / 2, y: -collisionNode.size.height / 2)
         collisionNode.addChild(outlineNode)
         
-        player.name = "player"
-        addChild(player)
+        self.player.name = "player"
+        addChild(self.player)
     }
 
     
@@ -214,7 +218,7 @@ class GameScene: SKScene {
             self.spawnMeasure(xCoordinate: self.screenWidth)
         }
 
-        let measureSpawnDelay = SKAction.wait(forDuration: (1/(Double(tempo/60)))*4) // Adjust the duration as needed
+        let measureSpawnDelay = SKAction.wait(forDuration: (1/(Double(self.tempo/60)))*4) // Adjust the duration as needed
 
         let measureSpawnSequence = SKAction.sequence([measureSpawnAction, measureSpawnDelay])
         let measureSpawnForever = SKAction.repeatForever(measureSpawnSequence)
@@ -226,7 +230,7 @@ class GameScene: SKScene {
     func startSpawningNotes() {
         var actions: [SKAction] = []
         
-        for (note, length) in zip(notesArray.enumerated(), noteLengths.enumerated()) {
+        for (note, length) in zip(self.notesArray.enumerated(), self.noteLengths.enumerated()) {
             let beat = 1/(Double(tempo/60))
             //let noteDuration = TimeInterval(1.0)
             let noteDuration = TimeInterval(beat*(length.element))
@@ -312,7 +316,7 @@ class GameScene: SKScene {
         // Create a block sprite
         let finishLine = SKSpriteNode(color: .green, size: CGSize(width: 50, height: self.screenHeight))
         
-        finishLine.position = CGPoint(x: screenWidth, y: size.height / 2)
+        finishLine.position = CGPoint(x: self.screenWidth, y: size.height / 2)
         
         finishLine.name = "finish"
         
@@ -336,11 +340,15 @@ class GameScene: SKScene {
 
     // Function to handle collisions
     override func update(_ currentTime: TimeInterval) {
+        // Immediately label colliding as false
         var isColliding = false
+        
         enumerateChildNodes(withName: "note") { node, _ in
             if (self.player.childNode(withName: "collisionNode")?.intersects(node) != false) {
                 // Collision with note detected, add to score and remove the note
                 self.score += 1
+                
+                // Update score and invoke attack animation on the Main Queue
                 self.scoreLabel.text = "Score: \(self.score)"
                 if(!self.attacking) {
                     print("attacking")
@@ -348,17 +356,20 @@ class GameScene: SKScene {
                     self.player.childNode(withName: "visualNode")?.run(self.repeatAttackAnimation, withKey: "attackAnimation")
                     self.attacking = true
                 }
-                
+
                 isColliding = true
             }
         }
-        if(attacking && !isColliding) {
+        
+        // If the character is attacking and not colliding with a block, replace attack animation with run animation
+        if(self.attacking && !isColliding) {
             print("running")
             self.player.childNode(withName: "visualNode")?.removeAction(forKey: "attackAnimation")
             self.player.childNode(withName: "visualNode")?.run(self.repeatRunAnimation, withKey: "runAnimation")
             self.attacking = false
         }
 
+        // End the level if the player ends up colliding with the finish line
         enumerateChildNodes(withName: "finish") { node, _ in
             if (self.player.childNode(withName: "collisionNode")?.intersects(node) != false) {
                 // Collision with finish detected, trigger endLevel function
@@ -366,7 +377,42 @@ class GameScene: SKScene {
             }
         }
         
-        self.activeNoteModel.updateData(timeData: audio.timeData)
+        // Check if the amplitude of any value in timeData exceeds 0.1
+        let restThreshold: Float = 0.1
+        let isAmplitudeHigh = self.audio.timeData.contains { abs($0) > restThreshold }
+
+        if isAmplitudeHigh {
+            // Invoke the Mel Spectrogram CNN CoreML Model to return the current pitch
+            let currentPitch: Int = self.activeNoteModel.retrieveCurrentPitch(
+                audioData: self.audio.timeData
+            )
+            
+            // Height location where player needs to move to based on note played
+            let playerDestination = CGFloat(self.screenHeight * self.noteHeights[currentPitch])
+            self.handleInput(yCoordinate: playerDestination)
+
+//            print(playerDestination)
+            
+            // Print the maximum absolute value in timeData
+            if let maxAmplitude = self.audio.timeData.max(by: { abs($0) < abs($1) }) {
+                print("READ Max amplitude: \(abs(maxAmplitude))")
+            }
+            
+        } else {
+            // Print the maximum absolute value in timeData
+            if let maxAmplitude = self.audio.timeData.max(by: { abs($0) < abs($1) }) {
+                print("SILENT Max amplitude: \(abs(maxAmplitude))")
+            }
+            
+            // Fetch rest note
+            let currentPitch: Int = self.activeNoteModel.retrieveRestNote()
+            
+            // Height location where player needs to move to based on note played
+            let playerDestination = CGFloat(self.screenHeight * self.noteHeights[currentPitch])
+            self.handleInput(yCoordinate: playerDestination)
+            
+//            print(playerDestination)
+        }
     }
     
     func endLevel() {
@@ -378,19 +424,23 @@ class GameScene: SKScene {
 
         // Create a label to display the score
         let endLabel = SKLabelNode(fontNamed: "Helvetica")
-        endLabel.text = "Score: \(score)"
+        
+        // Update label properties
+        endLabel.text = "Score: \(self.score)"
         endLabel.fontSize = 50
-        endLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight*0.6)
+        endLabel.position = CGPoint(x: self.screenWidth / 2, y: self.screenHeight*0.6)
         endLabel.fontColor = .white
+        
+        // Add the main queue to the
         addChild(endLabel)
 
         // Create a player node and position it underneath the score label
-        player = SKNode()
+        self.player = SKNode()
         let visual = SKSpriteNode(imageNamed: "Ninja Idle.png")
-        visual.size = CGSize(width: screenHeight*0.2, height: screenHeight*0.2)
-        player.addChild(visual)
-        player.position = CGPoint(x: size.width / 2, y: endLabel.position.y - (endLabel.frame.size.height+20))
-        addChild(player)
+        visual.size = CGSize(width: self.screenHeight*0.3, height: self.screenHeight*0.2)
+        self.player.addChild(visual)
+        self.player.position = CGPoint(x: size.width / 2, y: endLabel.position.y - (endLabel.frame.size.height+20))
+        addChild(self.player)
 
         // Create a button node
         let backButton = SKLabelNode(fontNamed: "Helvetica")
@@ -398,7 +448,7 @@ class GameScene: SKScene {
         backButton.fontSize = 30
         // Adjust the yOffset based on the visual node's height
         let yOffset: CGFloat = -visual.size.height / 2 - 20
-        backButton.position = CGPoint(x: size.width / 2, y: player.position.y + yOffset-20)
+        backButton.position = CGPoint(x: size.width / 2, y: self.player.position.y + yOffset-20)
         backButton.fontColor = .white
         backButton.color = .black
         backButton.name = "backButton"  // Set a name for the button to identify it later
@@ -428,7 +478,7 @@ class GameScene: SKScene {
 
     // Handle user input (call this function when you receive input from the notes)
     func handleInput(yCoordinate: CGFloat) {
-            let moveAction = SKAction.moveTo(y: 380-yCoordinate, duration: 0.05)
-            player.run(moveAction)
+        let moveAction = SKAction.moveTo(y: yCoordinate, duration: 0.05)
+        self.player.run(moveAction)
     }
 }
