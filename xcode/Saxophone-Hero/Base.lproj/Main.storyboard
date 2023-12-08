@@ -35,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3215" y="-75"/>
+            <point key="canvasLocation" x="3220" y="-77"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="K7H-2a-WkJ">
@@ -60,16 +60,27 @@
                             <outlet property="delegate" destination="0wi-kn-wUu" id="erz-l6-T1h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7gf-wY-fim"/>
+                    <navigationItem key="navigationItem" id="7gf-wY-fim">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lZG-wn-VFE">
+                            <rect key="frame" x="388.66666666666669" y="0.0" width="75" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="m6Y-md-lJt"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTI-vG-1QU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2583" y="-77"/>
         </scene>
-        <!--View Controller-->
+        <!--Launch View Controller-->
         <scene sceneID="OD2-0a-OhX">
             <objects>
-                <viewController id="OfB-bh-cGv" sceneMemberID="viewController">
+                <viewController id="OfB-bh-cGv" customClass="LaunchViewController" customModule="Saxophone_Hero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCk-NS-1ow">
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,14 +131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bns-hm-Mbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1299" y="-77"/>
-                    <connections>
-                        <outlet property="gameButton" destination="Rn8-iG-tqu" id="XMA-70-tZT"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="131.69014084507043" y="-34.351145038167935"/>
+            <point key="canvasLocation" x="1290" y="-77"/>
         </scene>
         <!--Level1 View Controller-->
         <scene sceneID="p47-XG-3pI">
@@ -141,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-5b-Iax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="-34"/>
+            <point key="canvasLocation" x="3855" y="-77"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="systemMintColor"/>

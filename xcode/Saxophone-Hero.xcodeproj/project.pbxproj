@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D4C20572B212D0200751EB7 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4C20562B212D0200751EB7 /* LaunchViewController.swift */; };
 		5D50F7A32B1FBFDE006279C2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */; };
 		AAF642022B1FB7D000D7E4A4 /* Ninja Walk.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642012B1FB7D000D7E4A4 /* Ninja Walk.png */; };
 		AAF642042B1FB7E000D7E4A4 /* Ninja Lean Back.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642032B1FB7E000D7E4A4 /* Ninja Lean Back.png */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D4C20562B212D0200751EB7 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AAF642012B1FB7D000D7E4A4 /* Ninja Walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Walk.png"; sourceTree = "<group>"; };
 		AAF642032B1FB7E000D7E4A4 /* Ninja Lean Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Lean Back.png"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				C09512732B194B6C00248A16 /* Level1ViewController.swift */,
 				C09512752B194B7700248A16 /* Level2ViewController.swift */,
 				5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */,
+				5D4C20562B212D0200751EB7 /* LaunchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				C09512742B194B6C00248A16 /* Level1ViewController.swift in Sources */,
 				C075596A2B115B43001414B7 /* FFTHelper.m in Sources */,
 				C07559612B115A87001414B7 /* Novocaine.m in Sources */,
+				5D4C20572B212D0200751EB7 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
