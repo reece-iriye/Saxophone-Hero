@@ -391,8 +391,6 @@ class GameScene: SKScene {
             let playerDestination = CGFloat(self.screenHeight * self.noteHeights[currentPitch])
             self.handleInput(yCoordinate: playerDestination)
 
-//            print(playerDestination)
-            
             // Print the maximum absolute value in timeData
             if let maxAmplitude = self.audio.timeData.max(by: { abs($0) < abs($1) }) {
                 print("READ Max amplitude: \(abs(maxAmplitude))")
