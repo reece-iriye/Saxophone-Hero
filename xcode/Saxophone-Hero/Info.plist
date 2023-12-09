@@ -4,6 +4,10 @@
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need to have audio input for the saxophone</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Nightmare_Hero_Normal.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

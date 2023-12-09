@@ -61,20 +61,9 @@ class HomeViewController: UIViewController {
     // Adjusted to comply with the new iOS guidelines
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Request geometry update for landscape orientation
+//         Request geometry update for landscape orientation
         if let windowScene = view.window?.windowScene {
             let orientationUpdate = UIWindowScene.GeometryPreferences.iOS(interfaceOrientations: .landscape)
-            windowScene.requestGeometryUpdate(orientationUpdate) { error in
-                print(error.localizedDescription)
-            }
-        }
-    }
-
-    // If the rest of your app is in portrait mode and you wish to return to it after this view controller disappears
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let windowScene = view.window?.windowScene {
-            let orientationUpdate = UIWindowScene.GeometryPreferences.iOS(interfaceOrientations: .portrait)
             windowScene.requestGeometryUpdate(orientationUpdate) { error in
                 print(error.localizedDescription)
             }

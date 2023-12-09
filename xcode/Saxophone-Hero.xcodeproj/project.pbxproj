@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0CEA8F2B230ED300381198 /* Nightmare_Hero_Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D0CEA8D2B230E8900381198 /* Nightmare_Hero_Normal.ttf */; };
+		5D4C20572B212D0200751EB7 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4C20562B212D0200751EB7 /* LaunchViewController.swift */; };
+		5D50F7A32B1FBFDE006279C2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */; };
 		AAF642022B1FB7D000D7E4A4 /* Ninja Walk.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642012B1FB7D000D7E4A4 /* Ninja Walk.png */; };
 		AAF642042B1FB7E000D7E4A4 /* Ninja Lean Back.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642032B1FB7E000D7E4A4 /* Ninja Lean Back.png */; };
 		AAF642062B1FB7E600D7E4A4 /* Ninja Attack.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642052B1FB7E600D7E4A4 /* Ninja Attack.png */; };
@@ -34,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D0CEA8D2B230E8900381198 /* Nightmare_Hero_Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nightmare_Hero_Normal.ttf; sourceTree = "<group>"; };
+		5D4C20562B212D0200751EB7 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AAF642012B1FB7D000D7E4A4 /* Ninja Walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Walk.png"; sourceTree = "<group>"; };
 		AAF642032B1FB7E000D7E4A4 /* Ninja Lean Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Lean Back.png"; sourceTree = "<group>"; };
 		AAF642052B1FB7E600D7E4A4 /* Ninja Attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Attack.png"; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 		C07558532B04813F001414B7 /* Saxophone-Hero */ = {
 			isa = PBXGroup;
 			children = (
+				5D0CEA8D2B230E8900381198 /* Nightmare_Hero_Normal.ttf */,
 				AAF642092B1FB8B400D7E4A4 /* Animations.atlas */,
 				C07559522B1155B9001414B7 /* AppDelegate */,
 				C075595A2B11586B001414B7 /* Models */,
@@ -140,6 +147,8 @@
 				C09512712B194B5900248A16 /* SelectionViewController.swift */,
 				C09512732B194B6C00248A16 /* Level1ViewController.swift */,
 				C09512752B194B7700248A16 /* Level2ViewController.swift */,
+				5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */,
+				5D4C20562B212D0200751EB7 /* LaunchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF642022B1FB7D000D7E4A4 /* Ninja Walk.png in Resources */,
+				5D0CEA8F2B230ED300381198 /* Nightmare_Hero_Normal.ttf in Resources */,
 				C07558612B048141001414B7 /* LaunchScreen.storyboard in Resources */,
 				C075585E2B048141001414B7 /* Assets.xcassets in Resources */,
 				AAF642082B1FB7EE00D7E4A4 /* Ninja Idle.png in Resources */,
@@ -265,6 +275,7 @@
 			files = (
 				AAF642132B2500B400D7E4A4 /* GameManager.swift in Sources */,
 				C095126C2B1940AD00248A16 /* GameScene.swift in Sources */,
+				5D50F7A32B1FBFDE006279C2 /* TableViewController.swift in Sources */,
 				C07559672B115B10001414B7 /* AudioFileReader.m in Sources */,
 				C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */,
 				C09512702B194B3A00248A16 /* HistoryViewController.swift in Sources */,
@@ -280,6 +291,7 @@
 				C09512742B194B6C00248A16 /* Level1ViewController.swift in Sources */,
 				C075596A2B115B43001414B7 /* FFTHelper.m in Sources */,
 				C07559612B115A87001414B7 /* Novocaine.m in Sources */,
+				5D4C20572B212D0200751EB7 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,8 +450,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -470,8 +482,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
