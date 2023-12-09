@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0CEA8F2B230ED300381198 /* Nightmare_Hero_Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D0CEA8D2B230E8900381198 /* Nightmare_Hero_Normal.ttf */; };
 		5D4C20572B212D0200751EB7 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4C20562B212D0200751EB7 /* LaunchViewController.swift */; };
 		5D50F7A32B1FBFDE006279C2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */; };
 		AAF642022B1FB7D000D7E4A4 /* Ninja Walk.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642012B1FB7D000D7E4A4 /* Ninja Walk.png */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D0CEA8D2B230E8900381198 /* Nightmare_Hero_Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nightmare_Hero_Normal.ttf; sourceTree = "<group>"; };
 		5D4C20562B212D0200751EB7 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		5D50F7A22B1FBFDE006279C2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AAF642012B1FB7D000D7E4A4 /* Ninja Walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Walk.png"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		C07558532B04813F001414B7 /* Saxophone-Hero */ = {
 			isa = PBXGroup;
 			children = (
+				5D0CEA8D2B230E8900381198 /* Nightmare_Hero_Normal.ttf */,
 				AAF642092B1FB8B400D7E4A4 /* Animations.atlas */,
 				C07559522B1155B9001414B7 /* AppDelegate */,
 				C075595A2B11586B001414B7 /* Models */,
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF642022B1FB7D000D7E4A4 /* Ninja Walk.png in Resources */,
+				5D0CEA8F2B230ED300381198 /* Nightmare_Hero_Normal.ttf in Resources */,
 				C07558612B048141001414B7 /* LaunchScreen.storyboard in Resources */,
 				C075585E2B048141001414B7 /* Assets.xcassets in Resources */,
 				AAF642082B1FB7EE00D7E4A4 /* Ninja Idle.png in Resources */,
@@ -434,8 +438,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -466,8 +470,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
