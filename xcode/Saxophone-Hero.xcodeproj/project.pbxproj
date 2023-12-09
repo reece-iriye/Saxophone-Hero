@@ -12,6 +12,8 @@
 		AAF642062B1FB7E600D7E4A4 /* Ninja Attack.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642052B1FB7E600D7E4A4 /* Ninja Attack.png */; };
 		AAF642082B1FB7EE00D7E4A4 /* Ninja Idle.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF642072B1FB7EE00D7E4A4 /* Ninja Idle.png */; };
 		AAF6420B2B21170200D7E4A4 /* ActiveNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6420A2B21170200D7E4A4 /* ActiveNoteModel.swift */; };
+		AAF642112B25007100D7E4A4 /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF642102B25007100D7E4A4 /* LevelModel.swift */; };
+		AAF642132B2500B400D7E4A4 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF642122B2500B400D7E4A4 /* GameManager.swift */; };
 		C075585C2B04813F001414B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585A2B04813F001414B7 /* Main.storyboard */; };
 		C075585E2B048141001414B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C075585D2B048141001414B7 /* Assets.xcassets */; };
 		C07558612B048141001414B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075585F2B048141001414B7 /* LaunchScreen.storyboard */; };
@@ -37,6 +39,8 @@
 		AAF642052B1FB7E600D7E4A4 /* Ninja Attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Attack.png"; sourceTree = "<group>"; };
 		AAF642072B1FB7EE00D7E4A4 /* Ninja Idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ninja Idle.png"; sourceTree = "<group>"; };
 		AAF6420A2B21170200D7E4A4 /* ActiveNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNoteModel.swift; sourceTree = "<group>"; };
+		AAF642102B25007100D7E4A4 /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
+		AAF642122B2500B400D7E4A4 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		C07558512B04813F001414B7 /* Saxophone-Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saxophone-Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C075585B2B04813F001414B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C075585D2B048141001414B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,7 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				C075595B2B11589A001414B7 /* AudioModel.swift */,
+				AAF642102B25007100D7E4A4 /* LevelModel.swift */,
 				AAF6420A2B21170200D7E4A4 /* ActiveNoteModel.swift */,
+				AAF642122B2500B400D7E4A4 /* GameManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,10 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF642132B2500B400D7E4A4 /* GameManager.swift in Sources */,
 				C095126C2B1940AD00248A16 /* GameScene.swift in Sources */,
 				C07559672B115B10001414B7 /* AudioFileReader.m in Sources */,
 				C07559642B115ADB001414B7 /* CircularBuffer.m in Sources */,
 				C09512702B194B3A00248A16 /* HistoryViewController.swift in Sources */,
+				AAF642112B25007100D7E4A4 /* LevelModel.swift in Sources */,
 				C07559552B1156A6001414B7 /* SceneDelegate.swift in Sources */,
 				AAF6420B2B21170200D7E4A4 /* ActiveNoteModel.swift in Sources */,
 				C09512722B194B5900248A16 /* SelectionViewController.swift in Sources */,
