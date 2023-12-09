@@ -11,7 +11,7 @@ class TableViewController: UITableViewController {
 
     public var levels: [String] = [
         "Level 01 - Hot Cross Buns",
-        "Level 02 - Mario Theme"
+        "Level 02 - Fly Me to The Moon"
     ]
     
     override func viewDidLoad() {

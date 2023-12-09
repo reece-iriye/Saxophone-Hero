@@ -2,6 +2,8 @@ import SpriteKit
 
 class GameScene: SKScene {
 
+    let gameManager = GameManager.shared
+    
     var screenWidth:CGFloat!
     var screenHeight:CGFloat!
     var velocity:CGFloat!
@@ -451,6 +453,8 @@ class GameScene: SKScene {
         backButton.color = .black
         backButton.name = "backButton"  // Set a name for the button to identify it later
         addChild(backButton)
+        
+        gameManager.addHighScore(levelIndex: gameManager.currentLevel, tempoIndex: gameManager.currentDifficulty, score: self.score)
     }
 
     // Add this function to your GameScene class
