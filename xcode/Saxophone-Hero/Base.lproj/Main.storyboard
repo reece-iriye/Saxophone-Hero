@@ -246,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="1936.6197183098593" y="-77.099236641221367"/>
         </scene>
-        <!--View Controller-->
+        <!--Selection View Controller-->
         <scene sceneID="8MX-mX-QWp">
             <objects>
-                <viewController id="q0g-Wf-tqh" sceneMemberID="viewController">
+                <viewController id="q0g-Wf-tqh" customClass="SelectionViewController" customModule="Saxophone_Hero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WA1-y3-Xfl">
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,6 +267,7 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="level2ButtonPress:" destination="q0g-Wf-tqh" eventType="touchUpInside" id="2L4-DU-BV3"/>
                                     <segue destination="wuR-SG-CN3" kind="presentation" id="aC4-ev-d6h"/>
                                 </connections>
                             </button>
@@ -277,6 +278,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldChange:" destination="q0g-Wf-tqh" eventType="editingDidEnd" id="COK-oa-UBn"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1u-ON-xRL">
                                 <rect key="frame" x="568" y="126" width="66" height="104"/>
@@ -332,6 +336,7 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="level1ButtonPress:" destination="q0g-Wf-tqh" eventType="touchUpInside" id="xXd-4f-4fP"/>
                                     <segue destination="wuR-SG-CN3" kind="presentation" id="KQV-1q-LMJ"/>
                                 </connections>
                             </button>
@@ -361,6 +366,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hTi-d3-H7P"/>
+                    <connections>
+                        <outlet property="Level2ScoreLabel" destination="NeZ-JQ-7Uu" id="PDm-oH-G6j"/>
+                        <outlet property="level1ScoreLabel" destination="MCB-Y3-h4v" id="U4C-bn-ilS"/>
+                        <outlet property="textField" destination="dej-Ip-MMA" id="VwI-pk-fHH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0V8-QN-bw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

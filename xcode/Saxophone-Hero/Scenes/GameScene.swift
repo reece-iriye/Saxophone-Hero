@@ -202,13 +202,6 @@ class GameScene: SKScene {
         collisionNode.name = "collisionNode"
         collisionNode.position = CGPoint(x: 15, y: 3)
         self.player.addChild(collisionNode)
-
-        // Create a stroked shape node as an outline
-        let outlineNode = SKShapeNode(rectOf: collisionNode.size, cornerRadius: 5.0)
-        outlineNode.strokeColor = SKColor.red  // Set the color of the outline
-        outlineNode.lineWidth = 2.0  // Set the width of the outline
-        outlineNode.position = CGPoint(x: -collisionNode.size.width / 2, y: -collisionNode.size.height / 2)
-        collisionNode.addChild(outlineNode)
         
         self.player.name = "player"
         addChild(self.player)
@@ -264,10 +257,42 @@ class GameScene: SKScene {
     // Function to spawn blocks
     func spawnNote(notePos:CGFloat, noteLen:Double) {
         // Create a block sprite
-        let note = SKSpriteNode(color: .red, size:CGSize(width: screenWidth*0.4*noteLen*0.98, height: screenHeight*0.05))
+        let note = SKSpriteNode(color: .red, size:CGSize(width: screenWidth*0.4*noteLen*0.92, height: screenHeight*0.02))
         note.position = CGPoint(x: screenWidth+(0.5*noteLen*0.4*screenWidth), y: screenHeight*noteHeights[Int(notePos)])
+        let visualNote:SKSpriteNode
+        switch notePos.truncatingRemainder(dividingBy: 4) {
+        case 0:
+            // Code to execute when notePos is divisible by 4 (remainder is 0)
+            visualNote = SKSpriteNode(imageNamed: "blue.png")
+            note.color = .blue
+            break
+        case 1:
+            // Code to execute when notePos divided by 4 leaves a remainder of 1
+            visualNote = SKSpriteNode(imageNamed: "red.png")
+            break
+        case 2:
+            // Code to execute when notePos divided by 4 leaves a remainder of 2
+            visualNote = SKSpriteNode(imageNamed: "yellow.png")
+            note.color = .yellow
+            break
+        case 3:
+            // Code to execute when notePos divided by 4 leaves a remainder of 3
+            visualNote = SKSpriteNode(imageNamed: "green.png")
+            note.color = .green
+            break
+        default:
+            // Code to execute for any other case
+            visualNote = SKSpriteNode(imageNamed: "blue.png")
+            note.color = .blue
+            break
+        }
         // Set the initial position of the block based on the array of notes
         // You need to implement your own logic to determine the vertical position based on the notes array
+        visualNote.size = CGSize(width: screenWidth*0.03, height: screenHeight*0.05)
+        visualNote.position = CGPoint(x: -screenWidth*0.2*noteLen*0.98, y: 0)
+        visualNote.zPosition = 21
+        note.addChild(visualNote)
+        note.zPosition = 20
         note.name = "note"
 
         // Add the block to the scene
@@ -316,10 +341,10 @@ class GameScene: SKScene {
     
     func spawnFinish() {
         // Create a block sprite
-        let finishLine = SKSpriteNode(color: .green, size: CGSize(width: 50, height: self.screenHeight))
-        
+        let finishLine = SKSpriteNode(imageNamed: "finishLine.png")
+        finishLine.size = CGSize(width: 100, height: self.screenHeight)
         finishLine.position = CGPoint(x: self.screenWidth, y: size.height / 2)
-        
+        finishLine.zPosition = 22
         finishLine.name = "finish"
         
         // Add the block to the scene
@@ -380,7 +405,7 @@ class GameScene: SKScene {
         }
         
         // Check if the amplitude of any value in timeData exceeds 0.1
-        let restThreshold: Float = 0.1
+        let restThreshold: Float = 0.20
         let isAmplitudeHigh = self.audio.timeData.contains { abs($0) > restThreshold }
 
         if isAmplitudeHigh {
@@ -435,12 +460,12 @@ class GameScene: SKScene {
         addChild(endLabel)
 
         // Create a player node and position it underneath the score label
-        self.player = SKNode()
+        let newPlayer = SKNode()
         let visual = SKSpriteNode(imageNamed: "Ninja Idle.png")
-        visual.size = CGSize(width: self.screenHeight*0.3, height: self.screenHeight*0.2)
-        self.player.addChild(visual)
-        self.player.position = CGPoint(x: size.width / 2, y: endLabel.position.y - (endLabel.frame.size.height+20))
-        addChild(self.player)
+        visual.size = CGSize(width: self.screenHeight*0.45, height: self.screenHeight*0.3)
+        newPlayer.addChild(visual)
+        newPlayer.position = CGPoint(x: size.width / 2, y: endLabel.position.y - (endLabel.frame.size.height+20))
+        addChild(newPlayer)
 
         // Create a button node
         let backButton = SKLabelNode(fontNamed: "Helvetica")
@@ -448,7 +473,7 @@ class GameScene: SKScene {
         backButton.fontSize = 30
         // Adjust the yOffset based on the visual node's height
         let yOffset: CGFloat = -visual.size.height / 2 - 20
-        backButton.position = CGPoint(x: size.width / 2, y: self.player.position.y + yOffset-20)
+        backButton.position = CGPoint(x: size.width / 2, y: newPlayer.position.y + yOffset)
         backButton.fontColor = .white
         backButton.color = .black
         backButton.name = "backButton"  // Set a name for the button to identify it later

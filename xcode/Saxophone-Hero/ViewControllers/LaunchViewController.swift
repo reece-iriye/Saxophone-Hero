@@ -47,12 +47,18 @@ class LaunchViewController: UIViewController {
             difficultyLabel.text = "Difficulty-Hard";
             gameManager.currentDifficulty = 2
         }
+        self.reloadLabels()
     }
     
     
     
     override func viewDidLoad() {
         self.reloadLabels()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            self.reloadLabels()
     }
     
     func reloadLabels() {

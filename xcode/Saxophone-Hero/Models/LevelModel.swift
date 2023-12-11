@@ -1,45 +1,52 @@
 import Foundation
 
-class LevelModel {
+class LevelModel: Codable{
     var notesArray: [Double] = []
     var noteLengths: [Double] = []
     var highScores: [[Int]] = Array(repeating: Array(repeating: 0, count: 5), count: 3) // 3x5 2D array
-    var highScoresStr: [[String]] = Array(repeating: Array(repeating: "None", count: 5), count: 3) // 3x5 2D array
+    var highScoresNames: [[String]] = Array(repeating: Array(repeating: "No Name", count: 5), count: 3) // 3x5 2D array
 
     init(notesArray: [Double], noteLengths: [Double]) {
         self.notesArray = notesArray
         self.noteLengths = noteLengths
     }
 
-    func getScores(difficulty:Int) -> [String]{
-        return highScoresStr[difficulty]
+    func getScores(difficulty: Int) -> [String] {
+        let scores = highScores[difficulty]
+        let names = highScoresNames[difficulty]
+
+        // Zip the scores and names arrays and map them to the desired format
+        let formattedScores = zip(names, scores).map { name, score in
+            if score != 0 {
+                return "\(name): \(score)"
+            } else {
+                return "None"
+            }
+        }
+
+        return formattedScores
     }
     
-    func updateHighScoresStr(tempoIndex: Int, playerName: String, newScore: Int) {
-            // Update highScoresStr based on highScores, playerName, and newScore
-            let highScores = self.highScores[tempoIndex]
-            var updatedHighScoresStr: [String] = []
+    func updateHighScores(score: Int, name: String, difficulty: Int) {
+        var scores = highScores[difficulty]
+        var names = highScoresNames[difficulty]
 
-            var addedNewScore = false
+        // Check if the new score is higher than any existing score
+        if let index = scores.firstIndex(where: { $0 < score }) {
+            // Insert the new score and name at the appropriate position
+            scores.insert(score, at: index)
+            names.insert(name, at: index)
 
-            for (index, score) in highScores.enumerated() {
-                if index < highScoresStr[tempoIndex].count {
-                    if newScore > score && !addedNewScore {
-                        // Insert the new score with the player name
-                        let scoreStr = "\(playerName): \(newScore)"
-                        updatedHighScoresStr.append(scoreStr)
-                        addedNewScore = true
-                    } else {
-                        // Use the existing string for other entries
-                        updatedHighScoresStr.append(highScoresStr[tempoIndex][index])
-                    }
-                } else {
-                    // Use "None" for entries without a score
-                    updatedHighScoresStr.append("None")
-                }
+            // Remove the last element if the array exceeds 5 entries
+            if scores.count > 5 {
+                scores.removeLast()
+                names.removeLast()
             }
-
-            self.highScoresStr[tempoIndex] = updatedHighScoresStr
         }
+
+        // Update the highScores and highScoresNames arrays
+        highScores[difficulty] = scores
+        highScoresNames[difficulty] = names
+    }
     
 }
