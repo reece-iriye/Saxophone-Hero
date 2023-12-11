@@ -8,7 +8,6 @@ class GameScene: SKScene {
     var screenHeight:CGFloat!
     var velocity:CGFloat!
     var noteHeights:[CGFloat] = [0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45, 0.4, 0.35, 0.15, 0.15]
-//    [0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.15]
     var currentNote:Int = 0
     var attacking:Bool = false  // No initial attack state for the character
     
@@ -405,7 +404,7 @@ class GameScene: SKScene {
         }
         
         // Check if the amplitude of any value in timeData exceeds 0.1
-        let restThreshold: Float = 0.20
+        let restThreshold: Float = 0.10
         let isAmplitudeHigh = self.audio.timeData.contains { abs($0) > restThreshold }
 
         if isAmplitudeHigh {
