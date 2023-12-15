@@ -20,4 +20,13 @@ This video below includes a recorded demo by Reece of the Fly Me To The Moon lev
 
 This video below includes a recorded demo by Reece playing down from a low F up to a high C on the tenor saxophone. We showcase the player movement and how it corresponds with each change in pitch.
 
+[![12-Notes](level-selection.png)](https://www.youtube.com/watch?v=CLuUt8QcZaE&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=2)
+
+### **User Interface Demo**
+
+This video includes a recorded demo of us going through the User Interface through a screen recording on an iPhone. 
+
+[![UI](home.png)]([https://www.youtube.com/watch?v=CLuUt8QcZaE&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=2](https://www.youtube.com/watch?v=2kmc06zytTs&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=3)https://www.youtube.com/watch?v=2kmc06zytTs&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=3)
+
+
 
