@@ -16,6 +16,8 @@ This video below includes a recorded demo by Reece of the Fly Me To The Moon lev
 
 [![Fly Me to the Moon](gameplay.png)](https://www.youtube.com/watch?v=B8kT6JnvB68&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3)
 
+### **Note-Playing Capabilities Demo**
 
+This video below includes a recorded demo by Reece playing down from a low F up to a high C on the tenor saxophone. We showcase the player movement and how it corresponds with each change in pitch.
 
 
