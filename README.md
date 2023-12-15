@@ -12,21 +12,20 @@ As long as you have a valid Apple Developer account and a MacBook Pro, this app 
 
 ### **Fly Me to The Moon Level Demo**
 
-This video below includes a recorded demo by Reece of the Fly Me To The Moon level.
+This video below includes a recorded demo by Reece of the Fly Me To The Moon level. Click either <a href="https://www.youtube.com/watch?v=B8kT6JnvB68&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3">here</a> or on the image below to watch the demo.
 
 [![Fly Me to the Moon](gameplay.png)](https://www.youtube.com/watch?v=B8kT6JnvB68&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3)
 
 ### **Note-Playing Capabilities Demo**
 
-This video below includes a recorded demo by Reece playing down from a low F up to a high C on the tenor saxophone. We showcase the player movement and how it corresponds with each change in pitch.
+This video below includes a recorded demo by Reece playing down from a low F up to a high C on the tenor saxophone. We showcase the player movement and how it corresponds with each change in pitch. Click either <a href="https://www.youtube.com/watch?v=CLuUt8QcZaE&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=2">here</a> or on the image below to watch the demo.
 
 [![12-Notes](level-selection.png)](https://www.youtube.com/watch?v=CLuUt8QcZaE&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=2)
 
 ### **User Interface Demo**
 
-This video includes a recorded demo of us going through the User Interface through a screen recording on an iPhone. 
+This video includes a recorded demo of us going through the User Interface through a screen recording on an iPhone. Click either <a href="https://www.youtube.com/watch?v=2kmc06zytTs&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=3">here</a> or on the image below to watch the demo.
 
-[![UI](home.png)]([https://www.youtube.com/watch?v=CLuUt8QcZaE&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=2](https://www.youtube.com/watch?v=2kmc06zytTs&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=3)https://www.youtube.com/watch?v=2kmc06zytTs&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=3)
-
+[![UI](home.png)](https://www.youtube.com/watch?v=2kmc06zytTs&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3&index=3)
 
 
