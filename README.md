@@ -1,76 +1,20 @@
 # **Saxophone Hero**
 
-## **Server/Python Set-Up**
+## **Overview**
 
-### **Python Environment**
+Step onto the stage with Saxophone Hero, where your tenor saxophone is the key to unlocking a rhythmic adventure through a world of sheet music. In this game, your character dashes through levels, scoring points by hitting the right notes. As the melodies flow from your tenor saxophone, so does your character, responding to each correctly played tone with precision and grace. The goal is simple yet captivating: play flawlessly to score high and rise through the ranks of this musical odyssey. Powered by machine learning, the game captures the pitch from your saxophone and translates it to player movement in real time. Whether you're just starting out with "Hot Cross Buns" or feeling nostalgic and want to play Frank Sinatra's "Fly Me To The Moon," Saxophone Hero promises to be an engaging fusion of music performance and interactive play, offering two levels that have varying difficulties.
 
-List of steps for setup with Python 3.8 (for compatibility with Turi) (used Rosetta terminal, see here: “Open Finder and go to "Applications", then "Utilities". Make a copy of Terminal or iTerm2, whichever is your preference. Call your copy something like "Rosetta Terminal". Right click on it and select "Get Info". Click the checkbox which says "Open using Rosetta". Launch your Rosetta Terminal and install TuriCreate like you normally would.”
+## **Game Set-Up**
 
+As long as you have a valid Apple Developer account and a MacBook Pro, this app will work automatically, as all necessary utilities for audio processing via Novocaine and game creation via SpriteKit are included in the repository. A Jupyter Notebook is included to visualize the training process, and a Python script for converting the PyTorch Mel Spectrogram Convolutional Neural Network (CNN) to an Apple CoreML is included. We decided to pursue this route instead of connecting the model to a server or setting up a serverless function, because the CoreML model will leverage the iPhone's GPU to accelerate Mel Spectrogram preprocessing and CNN runtime execution in the audio pitch detection task.
 
-FOR AN M1/M2 Mac!!! you might need to:
+## **YouTube Demos**
 
-1. Install using a terminal that is running x86 (i386) using rosetta:
-https://developer.apple.com/forums/thread/718722
+### **Fly Me to The Moon Level Demo**
 
-2. Instead of running the first command below, you might need to run the following from the Rosetta terminals follows:
+This video below includes a recorded demo by Reece of the Fly Me To The Moon level.
 
+[![Fly Me to the Moon]([http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://img.youtube.com/vi/B8kT6JnvB68&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3/0.jpg)]([http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE "Video Title"](https://www.youtube.com/watch?v=B8kT6JnvB68&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3))
 
-```{bash}
-CONDA_SUBDIR=osx-64 conda create "turi-env" python=3.8
-```
-
-If you are not sure which instruction set the terminal is using, try the "arch" command. If you get back arm64, this is M1/M2 instruction set (will not work for Turi). If you get back "i386" or "x86_64" this is using the instruction set needed for Turi.
-
-Instructions for non-M1/M2 Macs:
-
-```{bash}
-conda create -n "turi-env" python=3.8
-```
-
-Instructions for all Macs: 
-Note that numpy must be an older version to be compatible with Turi ...
-
-```
-conda activate turi-env 
-python3 -m pip install --upgrade pip 
-pip3 install numpy==1.23.1  
-pip3 install pandas 
-pip3 install matplotlib  
-pip3 install scikit-learn
-pip3 install seaborn 
-pip3 install jupyter 
-pip3 install coremltools
-pip3 install turicreate
-pip3 install pymongo
-```
-
-### **MongoDB Environment**
-
-For installing mongodb, you can use home-brew and the following instructions:
-
-Install brew:
-```{bash}
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew tap mongodb/brew
-brew update
-brew install mongodb-community@6.0
-```
-
-
-
-
-When starting a MongoDB server, run the following command:
-
-
-```{bash}
-brew services start mongodb-community@6.0
-```
-
-When stopping a MongoDB server, run the following command:
-
-
-```{bash}
-brew services stop mongodb-community@6.0
-```
 
 
