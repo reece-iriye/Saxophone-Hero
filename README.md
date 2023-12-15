@@ -14,7 +14,8 @@ As long as you have a valid Apple Developer account and a MacBook Pro, this app 
 
 This video below includes a recorded demo by Reece of the Fly Me To The Moon level.
 
-[![Fly Me to the Moon]([]()]([http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE "Video Title"](https://www.youtube.com/watch?v=B8kT6JnvB68&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3))
+[![Fly Me to the Moon](gameplay.png)](https://www.youtube.com/watch?v=B8kT6JnvB68&list=PLx2oopIYb-6FwcKfDmZyXA88GNY_I2Oo3)
+
 
 
 
